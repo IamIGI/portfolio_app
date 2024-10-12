@@ -1,0 +1,43 @@
+@import 'global.vars.scss';
+
+/* Reset basic browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure full height for body and html */
+html,
+body {
+  height: 100%;
+}
+
+/* Set a common font and smooth scrolling */
+body {
+  font-family: Arial, sans-serif; /* You can replace this with your desired font */
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* Set 100% width and height for media elements like videos */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove link underlines */
+a {
+  text-decoration: none;
+  color: inherit;
+}
