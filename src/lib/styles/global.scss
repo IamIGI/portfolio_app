@@ -12,7 +12,6 @@
 /* Ensure full height for body and html */
 html,
 body {
-  height: 3000px;
 }
 
 /* Set a common font and smooth scrolling */
@@ -33,11 +32,30 @@ video {
 /* Remove default list styles */
 ul,
 ol {
-  list-style: none;
+  padding: 5px 5px 5px 15px;
+  list-style: disc;
 }
 
 /* Remove link underlines */
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+}
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: 500;
+}
+p {
+  font-size: var(--font-size-p);
 }

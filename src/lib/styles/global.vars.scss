@@ -1,9 +1,11 @@
 :root {
   --main-border-radius: 10px;
 
-  --font-size-big: 31px;
-  --font-size-normal: 21px;
-  --font-size-min: 16px;
+  --font-size-h1: 41px;
+  --font-size-h2: 31px;
+  --font-size-h3: 24px;
+  --font-size-h4: 21px;
+  --font-size-p: 16px;
   --font-size-minV2: 14px;
   --font-size-footer: 11px;
 
@@ -15,6 +17,7 @@
   --main-button-background-color-hover: #f5f3f3;
 
   --main-text-color: #000;
+  --main-second-text-color: #484848;
   --border-color: #e5e7eb;
   --scrollbar-background-color-thumb: #c2c2c2;
   --scrollbar-background-color-thumb-hover: #b3b3b3;
@@ -22,7 +25,7 @@
   --icon-color-filter: invert(0%) sepia(10%) saturate(56%) hue-rotate(274deg)
     brightness(109%) contrast(100%);
 
-  --color-accent: rgb(12, 163, 9);
+  --color-accent: #008000;
   --color-button: rgb(7, 119, 5);
   --color-button-hover: rgb(7, 137, 5);
 
