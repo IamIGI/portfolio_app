@@ -29,7 +29,7 @@
 
 <nav class={isScrolled ? 'scrolled' : ''}>
   <!-- Left Section: Title -->
-  <div class="title">IGOR.</div>
+  <div class="title"><img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.</div>
 
   <!-- Center Section: Navigation Links -->
   <ul>
@@ -85,6 +85,15 @@
     .title {
       font-size: 2.5rem;
       font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      img {
+        $size: 40px;
+        height: $size;
+        width: $size;
+      }
     }
 
     ul {
@@ -94,13 +103,16 @@
 
       li a {
         text-decoration: none;
-
+        cursor: pointer;
         font-size: 1.4rem;
         font-weight: 500;
-        transition: color 0.3s ease;
+        transition:
+          color 0.3s ease,
+          font-size 0.3s ease;
 
         &:hover {
           color: gray;
+          font-size: calc(1.4rem + 5px);
         }
       }
     }
@@ -114,17 +126,6 @@
       $size: 45px;
       height: $size;
       width: $size;
-    }
-    .white-svg-icon {
-      //https://codepen.io/sosuke/pen/Pjoqqp
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
-        brightness(103%) contrast(103%);
-    }
-
-    .black-svg-icon {
-      //black
-      filter: invert(55%) sepia(0%) saturate(453%) hue-rotate(148deg)
-        brightness(91%) contrast(82%);
     }
   }
 </style>
