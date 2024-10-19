@@ -19,6 +19,8 @@ body {
   font-family: Arial, sans-serif; /* You can replace this with your desired font */
   line-height: 1.5;
   scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 /* Set 100% width and height for media elements like videos */
@@ -58,4 +60,16 @@ h4 {
 }
 p {
   font-size: var(--font-size-p);
+}
+
+.white-svg-icon {
+  //https://codepen.io/sosuke/pen/Pjoqqp
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+}
+
+.black-svg-icon {
+  //black
+  filter: invert(55%) sepia(0%) saturate(453%) hue-rotate(148deg)
+    brightness(91%) contrast(82%);
 }
