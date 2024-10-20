@@ -129,8 +129,7 @@
     img {
       width: 100px;
       height: 50px;
-      filter: invert(22%) sepia(60%) saturate(6664%) hue-rotate(116deg)
-        brightness(94%) contrast(105%); //green
+      filter: var(--color-filter-accent);
     }
     p {
     }
@@ -195,8 +194,7 @@
       img {
         width: 30px;
         height: 30px;
-        filter: invert(22%) sepia(60%) saturate(6664%) hue-rotate(116deg)
-          brightness(94%) contrast(105%);
+        filter: var(--color-filter-accent);
       }
     }
   }
