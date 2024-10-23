@@ -12,6 +12,8 @@
 /* Ensure full height for body and html */
 html,
 body {
+  height: 100%; // Ensure the html and body take up full height
+  margin: 0;
 }
 
 /* Set a common font and smooth scrolling */

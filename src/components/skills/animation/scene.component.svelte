@@ -6,5 +6,3 @@
 <Canvas shadows>
   <Shapes />
 </Canvas>
-
-<style lang="scss"></style>
