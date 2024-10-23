@@ -6,6 +6,21 @@
   let showScene = false;
   let shapesElement: HTMLDivElement | null = null;
 
+  const skills: { iconName: string; title: string }[] = [
+    { iconName: 'typescript', title: 'TypeScript' },
+    { iconName: 'svelte', title: 'Svelte' },
+    { iconName: 'mongodb', title: 'MongoDB' },
+    { iconName: 'sql', title: 'SQL' },
+    { iconName: 'nodejs', title: 'NodeJS' },
+    { iconName: 'javascript', title: 'JavaScript' },
+    { iconName: 'react', title: 'React' },
+    { iconName: 'redux', title: 'Redux' },
+    { iconName: 'git', title: 'GIT' },
+    { iconName: 'jira', title: 'Jira' },
+    { iconName: 'confluence', title: 'Confluence' },
+    { iconName: 'scss', title: 'Sass/Scss' },
+  ];
+
   onMount(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -28,17 +43,16 @@
 
 <div class="wrapper">
   <div class="content">
-    <Tile>
-      <!-- <div slot="background">Background</div> -->
-      <!-- <div> -->
-      <img
-        class="skill-icon"
-        src="/svg/skills/typescript.svg"
-        alt="typescript"
-      />
-      <p>TypeScript</p>
-      <!-- </div> -->
-    </Tile>
+    {#each skills as skill}
+      <Tile>
+        <img
+          class="skill-icon"
+          src={`/svg/skills/${skill.iconName}.svg`}
+          alt="typescript"
+        />
+        <p>{skill.title}</p>
+      </Tile>
+    {/each}
   </div>
   <div class="shapes" bind:this={shapesElement}>
     {#if showScene}
@@ -49,43 +63,48 @@
 
 <style lang="scss">
   .wrapper {
-    outline: 1px solid purple;
+    /* outline: 1px solid purple; */
     padding: 15px;
-    height: 500px;
     width: 100%;
-    height: fit-content;
+    height: 100%; // Full height relative to body
+    /* padding: 0 0 0 5%; */
     display: flex;
-    gap: 2rem;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
   }
 
   .content {
-    outline: 1px solid red;
-    flex: 1;
+    height: 100%;
+    width: 40%;
+    max-width: 1060px;
+    /* outline: 1px solid red; */
+    /* flex: 1; */
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 
     p {
       color: var(--main-background-color);
       font-size: 20px;
       font-weight: 700;
     }
-  }
 
-  .skill-icon {
-    $size: 150px;
-    height: $size;
-    width: $size;
+    .skill-icon {
+      $size: 100px;
+      height: $size;
+      width: $size;
+      border-radius: 10%;
+    }
   }
 
   .shapes {
     height: 700px;
-    outline: 1px solid green;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* outline: 1px solid green; */
+    width: 60%;
+    max-width: 1050px;
+    /* flex: 1; // Ensure it takes up more space as defined */
   }
 </style>

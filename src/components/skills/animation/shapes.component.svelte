@@ -2,7 +2,12 @@
   import { T as Threlte } from '@threlte/core';
   import * as THREE from 'three';
   import Geometry from './Geometry.component.svelte';
-  import { ContactShadows, Environment, interactivity, transitions} from '@threlte/extras';
+  import {
+    ContactShadows,
+    Environment,
+    interactivity,
+    transitions,
+  } from '@threlte/extras';
 
   interactivity();
   transitions();
@@ -14,7 +19,7 @@
   aspect={1}
   fov={30}
   near={1}
-  far={40}
+  far={30}
 />
 <Environment files="smallroom.hdr" path="animation/" format="hdr" />
 <!-- Where is the ground -->
@@ -56,5 +61,3 @@
   rate={0.7}
   geometry={new THREE.OctahedronGeometry(1.5)}
 />
-
-<style lang="scss"></style>
