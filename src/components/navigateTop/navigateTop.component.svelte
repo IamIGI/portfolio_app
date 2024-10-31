@@ -32,6 +32,9 @@
     color: white;
 
     cursor: pointer;
+    border: none;
+    outline: none;
+    z-index: 100;
 
     img {
       $size: 45px;

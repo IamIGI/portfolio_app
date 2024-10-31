@@ -1,7 +1,7 @@
 :root {
   --main-border-radius: 10px;
 
-  --font-size-h1: 41px;
+  --font-size-h1: 51px;
   --font-size-h2: 31px;
   --font-size-h3: 24px;
   --font-size-h4: 21px;
@@ -25,9 +25,12 @@
   --icon-color-filter: invert(0%) sepia(10%) saturate(56%) hue-rotate(274deg)
     brightness(109%) contrast(100%);
 
-  --color-accent: #db6f34;
-  --color-filter-accent: invert(42%) sepia(57%) saturate(837%)
+  --color-accent-welcome: #db6f34;
+  --color-accent: #7db8c3;
+  --color-filter-accent-welcome: invert(42%) sepia(57%) saturate(837%)
     hue-rotate(339deg) brightness(92%) contrast(81%);
+  --color-filter-accent: invert(75%) sepia(42%) saturate(286%)
+    hue-rotate(142deg) brightness(86%) contrast(86%);
   --color-button: rgb(7, 119, 5);
   --color-button-hover: rgb(7, 137, 5);
 

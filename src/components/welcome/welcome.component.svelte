@@ -4,6 +4,7 @@
 
   let nameLetters = 'igor'.split('');
   let surnameLetters = 'kłusek'.split('');
+  let videoName = 'geometric-shapes.1920x1080.mp4';
 
   onMount(() => {
     const tl = gsap.timeline();
@@ -35,10 +36,7 @@
 <div class="welcome-section">
   <!-- Background Video -->
   <video class="background-video" autoplay muted loop>
-    <source
-      src="/videos/blurred-sunset-while-raining.1920x1080.mp4"
-      type="video/mp4"
-    />
+    <source src={`/videos/${videoName}`} type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
@@ -87,7 +85,7 @@
 
       // Add a filter to make the video darker
       /* filter: brightness(1) contrast(1.2); // Adjust values to your preference */
-      filter: brightness(0.75); // Adjust values to your preference
+      filter: brightness(1); // Adjust values to your preference
     }
 
     // Content of the section
@@ -122,14 +120,16 @@
         gap: 3rem;
 
         span {
-          color: var(--color-accent);
+          color: var(--color-accent-welcome);
+          /* color: #216e1e; */
         }
 
         h1 {
           margin: 0;
           padding: 0;
 
-          color: var(--color-accent);
+          color: var(--color-accent-welcome);
+          color: var(--color-accent-welcome);
           $fontSize: 6rem;
           font-size: $fontSize;
           line-height: $fontSize;
@@ -143,6 +143,11 @@
 
         h2 {
           font-weight: 400;
+
+          span {
+            font-size: 40px;
+            font-weight: 700;
+          }
         }
       }
 
@@ -153,7 +158,7 @@
         max-width: $size;
         max-height: $size;
         border-radius: 50%;
-        border: 4px solid var(--main-background-color);
+        border: 4px solid var(--color-accent-welcome);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -209,10 +214,10 @@
           text-align: center;
 
           h1 {
-            color: white;
+            /* color: white; */
           }
           span {
-            color: white;
+            /* color: white; */
             font-weight: 700;
           }
         }
@@ -225,7 +230,7 @@
       height: 700px;
 
       .content {
-        padding-top: 100px;
+        padding-top: 70px;
         gap: 4rem;
         flex-direction: column;
         justify-content: flex-start;
@@ -239,6 +244,9 @@
 
           h2 {
             font-size: 19px;
+            span {
+              font-size: 19px;
+            }
           }
         }
 

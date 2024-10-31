@@ -2,6 +2,7 @@
   import Saos from 'saos';
   import WorkDate from './workDate.component.svelte';
   import WorkDescription from './workDescription.component.svelte';
+  import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
 
   const workExperience: T.WorkExperience[] = [
     {
@@ -45,15 +46,11 @@
 </script>
 
 <div class="wrapper" id="work_experience">
-  <div class="title-wrapper">
-    <h1>Work experience</h1>
-    <img src="/svg/work-experience/link.svg" alt="dot" />
-    <h3>
-      Practical skills, responsibilities, and achievements gained in
-      professional roles, showcasing career growth and expertise in a software
-      developer field.
-    </h3>
-  </div>
+  <SectionTitle
+    title={'Work experience'}
+    description={'Practical skills, responsibilities, and achievements gained in professional roles, showcasing career growth and expertise in a software developer field.'}
+  />
+
   {#each workExperience as experience, index}
     <div class="item-wrapper">
       {#if index % 2 === 0}
@@ -114,25 +111,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-  }
-
-  .title-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-bottom: 2rem;
-    width: 75%;
-    margin: auto;
-    text-align: center;
-
-    img {
-      width: 100px;
-      height: 50px;
-      filter: var(--color-filter-accent);
-    }
-    p {
-    }
   }
 
   .item-wrapper {
