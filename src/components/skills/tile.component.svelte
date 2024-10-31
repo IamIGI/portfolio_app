@@ -4,7 +4,9 @@
   const lightPower = 0.5;
   const size = 200;
   const linearGradient =
-    'radial-gradient(circle, rgba(84,66,9,1) 3%, rgba(241,164,7,0.7931547619047619) 71%)';
+    'radial-gradient(circle, rgba(194,188,170,1) 30%, rgba(227,224,217,0.7931547619047619) 100%)';
+
+  // 'radial-gradient(circle, rgba(84,66,9,1) 3%, rgba(241,164,7,0.7931547619047619) 71%)';
 
   let backgroundElement: HTMLDivElement;
   let foregroundElement: HTMLDivElement;
