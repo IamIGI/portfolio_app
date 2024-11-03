@@ -1,6 +1,7 @@
 <script lang="ts">
   import Footer from '../components/footer/footer.component.svelte';
   import NavigateTop from '../components/navigateTop/navigateTop.component.svelte';
+  import Projects from '../components/projects/projects.component.svelte';
   import Skills from '../components/skills/skills.component.svelte';
   import Welcome from '../components/welcome/welcome.component.svelte';
   import WorkExperience from '../components/workExperience/workExperience.component.svelte';
@@ -11,6 +12,7 @@
   <Welcome />
   <WorkExperience />
   <Skills />
+  <Projects />
   <Footer />
 </div>
 
