@@ -77,7 +77,7 @@
     color: white;
 
     &.scrolled {
-      background-color: white;
+      background-color: var(--main-background-color);
       color: black;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }

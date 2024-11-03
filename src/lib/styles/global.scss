@@ -21,8 +21,9 @@ body {
   font-family: Arial, sans-serif; /* You can replace this with your desired font */
   line-height: 1.5;
   scroll-behavior: smooth;
-
   overflow-x: hidden;
+  background-color: var(--main-background-color);
+  // background-color: red;
 }
 
 /* Set 100% width and height for media elements like videos */
@@ -59,6 +60,10 @@ h3 {
 h4 {
   font-size: var(--font-size-h4);
   font-weight: 500;
+}
+h5 {
+  font-size: var(--font-size-h5);
+  // font-weight: 500;
 }
 p {
   font-size: var(--font-size-p);
