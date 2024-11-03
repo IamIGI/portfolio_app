@@ -1,21 +1,14 @@
 <script lang="ts">
-  export let title: string = 'HotShot.tk';
-  export let techStack: string[] = [
-    'React JS',
-    'Redux',
-    'Typescript',
-    'NodeJs',
-    'MongoDB',
-    'JWT',
-    'Stripe',
-  ];
-  export let description: string =
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model ";
-  export let githubLink: string =
-    'https://github.com/IamIGI/ComputerShop-typescript';
-  export let projectBoardLink: string =
-    'https://github.com/users/IamIGI/projects/1/views/1';
-  export let imgUrl: string = '/images/projects/hotShoot.JPG';
+  import Link from './link.component.svelte';
+
+  export let title;
+  export let techStack: string[];
+  export let description: string;
+  export let githubLink: string;
+  export let projectBoardLink: string | undefined = undefined;
+  export let websiteLink: string | undefined = undefined;
+  export let figmaLink: string | undefined = undefined;
+  export let imgUrl: string;
   export let nd2: boolean = false; //index n2 will have other style properties
 </script>
 
@@ -25,25 +18,19 @@
     <h4>TECH: {techStack.join(', ').toUpperCase()}</h4>
     <p>{description}</p>
     <div class="links">
-      <a class="link" href={githubLink}>
-        <h5>Github</h5>
-        <img
-          class="icon"
-          class:icon-nd2={nd2}
-          src="/svg/projects/enter.svg"
-          alt="link"
-        />
-      </a>
-      <a class="link" href={projectBoardLink}>
-        <h5>Project Board</h5>
-        <img
-          class="icon"
-          class:icon-nd2={nd2}
-          src="/svg/projects/enter.svg"
-          alt="link"
-        />
-      </a>
+      <Link link={githubLink} name="Github" {nd2} />
+      {#if projectBoardLink}
+        <Link link={projectBoardLink} name="Project" {nd2} />
+      {/if}
+      {#if websiteLink}
+        <Link link={websiteLink} name="Website" {nd2} />
+      {/if}
     </div>
+    {#if figmaLink}
+      <div class="links">
+        <Link link={figmaLink} name="Figma" {nd2} />
+      </div>
+    {/if}
   </div>
   <div class="image-wrapper">
     <div class="image-content" class:image-content-2nd={nd2}>
@@ -56,14 +43,10 @@
   $first-tile-background-color: #232121;
   $first-font-color: #706e6c;
   $first-font-title-color: #c3c1c0;
-  $first-icon-color: invert(91%) sepia(7%) saturate(59%) hue-rotate(336deg)
-    brightness(86%) contrast(91%);
 
   $second-tile-background-color: #edebe8;
   $second-font-color: #959392;
   $second-font-title-color: #4f4d4c;
-  $second-icon-color: invert(28%) sepia(8%) saturate(143%) hue-rotate(335deg)
-    brightness(96%) contrast(86%);
 
   $border-radius: 20px;
 
@@ -77,7 +60,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    padding: 4% 6% 0 6%;
+    padding: 40px 6% 0 6%;
     border-radius: $border-radius;
     gap: 6rem;
     background-color: $first-tile-background-color;
@@ -90,7 +73,9 @@
     h4 {
       line-height: 21px;
     }
-    p {
+    p,
+    ul,
+    li {
       color: $first-font-color;
       margin-bottom: 10px;
     }
@@ -103,16 +88,13 @@
     h5 {
       color: $second-font-title-color;
     }
-    p {
+    p,
+    ul,
+    li {
       color: $second-font-color;
     }
   }
-  .icon {
-    filter: $first-icon-color;
-  }
-  .icon-nd2 {
-    filter: $second-icon-color;
-  }
+
   .content-wrapper {
     flex: 1;
     min-height: 100%;
@@ -124,25 +106,7 @@
       justify-content: flex-start;
       align-items: center;
       gap: 3rem;
-
-      .link {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 5px;
-        /* outline: 1px solid red; */
-        h5 {
-          padding-top: 9px;
-          /* outline: 1px solid blue; */
-        }
-
-        img {
-          $size: 30px;
-          height: $size;
-          width: $size;
-          /* border-radius: 10%; */
-        }
-      }
+      margin-bottom: 5px;
     }
   }
   .image-wrapper {

@@ -1,0 +1,10 @@
+hotshot:
+  desc: 'HotShoot.tk to sklep internetowy z laptopami, nad którym pracuję od 2022 roku, rozwijając zarówno frontend, jak i backend. Platforma zapewnia bezpieczną autoryzację użytkowników, rozbudowany koszyk zakupowy, obsługę promocji, filtrowanie produktów oraz sekcję zarządzania kontem i zamówieniami. Użytkownicy mogą korzystać z sekcji artykułów i zaawansowanego systemu komentarzy, a także łatwo kontaktować się poprzez formularz. Dodatkowo, sklep umożliwia generowanie dokumentów PDF, jak faktury i podsumowania zamówień. Dzięki RWD strona działa płynnie na komputerach i urządzeniach mobilnych.'
+paletyEuro:
+  desc: 'Strona internetowa została zaprojektowana na podstawie autorskiego projektu w Figma, przygotowanego w kilku wersjach kolorystycznych. Wyróżnia ją przemyślany, przyciągający wzrok układ, który jasno prezentuje, czym zajmuje się firma, gdzie ją znaleźć i co oferuje. Strona zawiera formularz kontaktowy oraz interaktywną mapę Google, ułatwiającą lokalizację.'
+translatorApp:
+  desc: 'TranslatorApp to frontendowy projekt aplikacji do tłumaczenia języków, który korzysta z zewnętrznego serwisu, umożliwiając tłumaczenie dowolnego języka na wybrany. Kluczowe funkcje aplikacji to szeroka baza języków, historia tłumaczeń oraz możliwość zapisywania ulubionych, tryb dark mode oraz responsywny design (RWD) dostosowany do urządzeń mobilnych i desktopowych.'
+countriesApp:
+  desc: 'Aplikacja umożliwia przeglądanie wszystkich krajów z API na stronie głównej oraz wyszukiwanie kraju za pomocą pola tekstowego. Użytkownicy mogą filtrować kraje według regionów i klikać na konkretne państwa, aby uzyskać szczegółowe informacje. Interfejs dostosowuje się do rozmiaru ekranu urządzenia, a dodatkowo aplikacja oferuje możliwość przełączania między trybem jasnym a ciemnym.'
+others:
+  desc: 'Zapraszam do odkrycia moich pozostałych projektów! Odwiedź mój profil na GitHubie, aby zobaczyć pełen zakres moich umiejętności oraz zrealizowanych przedsięwzięć. Przekonaj się sam, jak różnorodne są moje projekty i jakie technologie wykorzystałem w ich realizacji!'
