@@ -2,9 +2,8 @@
   // Config
   const tiltStrong = 30;
   const lightPower = 0.5;
-  const size = 150;
   const linearGradient =
-    'radial-gradient(circle, rgba(194,188,170,1) 30%, rgba(227,224,217,0.7931547619047619) 100%)';
+    'linear-gradient(90deg, rgba(169,152,180,1) 0%, rgba(246,109,109,1) 50%, rgba(251,199,126,1) 100%)';
 
   // 'radial-gradient(circle, rgba(84,66,9,1) 3%, rgba(241,164,7,0.7931547619047619) 71%)';
 
@@ -77,7 +76,6 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   class="tilt-wrapper"
-  style=" width: {size}px; height: {size}px;"
   on:mousemove={handleMouseMove}
   on:mouseleave={handleMouseLeave}
 >
@@ -100,11 +98,26 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   /* Apply perspective to the wrapper */
   .tilt-wrapper {
+    $size: 150px;
+    height: $size;
+    width: $size;
     perspective: 400px;
     position: relative;
+
+    @media (max-width: 1250px) {
+      $size: 120px;
+      height: $size;
+      width: $size;
+    }
+
+    @media (max-width: 420px) {
+      $size: 105px;
+      height: $size;
+      width: $size;
+    }
   }
 
   /* Background layer with exaggerated tilt and dynamic light */

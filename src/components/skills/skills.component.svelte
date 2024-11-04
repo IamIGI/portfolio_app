@@ -70,35 +70,44 @@
 
 <style lang="scss">
   .wrapper {
-    /* outline: 1px solid purple; */
-    /* padding: 15px; */
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0 0 0 7%;
+
+    @media (max-width: 1250px) {
+      padding: 0 0 0 4%;
+    }
+
+    @media (max-width: 850px) {
+      padding: 0 5%;
+    }
   }
 
   .inner-wrapper {
-    /* outline: 1px solid purple; */
-    /* padding: 15px; */
-    outline: 1px solid green;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 1250px) {
+      gap: 0rem;
+    }
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
   }
 
   .content {
-    outline: 1px solid red;
     height: 100%;
-    min-width: 500px;
-    max-width: 500px;
+    $width: 500px;
+    min-width: $width;
+    max-width: $width;
 
-    /* outline: 1px solid red; */
-    /* flex: 1; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -117,11 +126,29 @@
       width: $size;
       border-radius: 10%;
     }
+
+    @media (max-width: 1250px) {
+      $width: 400px;
+      min-width: $width;
+      max-width: $width;
+      p {
+        font-size: 16px;
+      }
+      .skill-icon {
+        $size: 50px;
+        height: $size;
+        width: $size;
+      }
+    }
+
+    @media (max-width: 850px) {
+      width: 100%;
+      min-width: none;
+      max-width: none;
+    }
   }
 
   .shapes {
-    outline: 1px solid blue;
-
     z-index: 10;
     aspect-ratio: 2 / 1.5; // This fix problem with scaling the SCENE
     overflow: hidden;
@@ -130,8 +157,8 @@
     max-width: 900px;
     max-height: 700px;
 
-    /* @media (max-width: 1400px) {
-      max-width: 500px;
-    } */
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 </style>
