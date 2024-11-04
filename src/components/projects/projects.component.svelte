@@ -28,7 +28,6 @@
         'HotShoot.tk to sklep internetowy z laptopami, nad którym pracuję od 2022 roku, rozwijając zarówno frontend, jak i backend. Platforma zapewnia bezpieczną autoryzację użytkowników, rozbudowany koszyk zakupowy, obsługę promocji, filtrowanie produktów oraz sekcję zarządzania kontem i zamówieniami. Użytkownicy mogą korzystać z sekcji artykułów i zaawansowanego systemu komentarzy, a także łatwo kontaktować się poprzez formularz. Dodatkowo, sklep umożliwia generowanie dokumentów PDF, jak faktury i podsumowania zamówień. Dzięki RWD strona działa płynnie na komputerach i urządzeniach mobilnych.',
       github: 'https://github.com/IamIGI/ComputerShop-typescript',
       projectBoard: 'https://github.com/users/IamIGI/projects/1/views/1',
-      websiteLink: 'https://pallet-sale-office-company-website.vercel.app',
       imgUrl: '/images/projects/hotShoot.JPG',
     },
     //--------PALETY EURO------------
@@ -62,6 +61,7 @@
         'Aplikacja umożliwia przeglądanie wszystkich krajów z API na stronie głównej oraz wyszukiwanie kraju za pomocą pola tekstowego. Użytkownicy mogą filtrować kraje według regionów i klikać na konkretne państwa, aby uzyskać szczegółowe informacje. Interfejs dostosowuje się do rozmiaru ekranu urządzenia, a dodatkowo aplikacja oferuje możliwość przełączania między trybem jasnym a ciemnym.',
       techStack: ['React', 'Redux', 'Typescript', 'clean css'],
       github: 'https://github.com/IamIGI/REST-Countries-API',
+      websiteLink: 'https://iamigi.github.io/REST-Countries-API/',
       imgUrl: '/images/projects/countriesApp.JPG',
     },
   ];
