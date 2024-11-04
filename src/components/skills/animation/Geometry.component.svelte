@@ -4,6 +4,7 @@
   import * as THREE from 'three';
   import gsap from 'gsap';
   import { elasticOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
 
   //x,y,z
   export let position: [number, number, number] = [0, 0, 0];
@@ -11,6 +12,7 @@
   export let rate: number = 0.5;
 
   let visible = false;
+  let reducedMotionRate = 0;
 
   const soundEffects = [
     new Audio('/sounds/hit1.ogg'),
@@ -59,14 +61,23 @@
       delay: gsap.utils.random(0, 3),
     };
   });
+
+  onMount(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    reducedMotionRate = prefersReducedMotion ? 0 : 1;
+  });
+
+  $: compoundRate = rate * reducedMotionRate;
 </script>
 
-<Threlte.Group position={position.map((p) => p * 2.5)}>
+<Threlte.Group position={position.map((p) => p * 2.2)}>
   <Float
-    speed={5 * rate}
-    rotationSpeed={5 * rate}
-    rotationIntensity={6 * rate}
-    floatIntensity={5 * rate}
+    speed={5 * compoundRate}
+    rotationSpeed={5 * compoundRate}
+    rotationIntensity={6 * compoundRate}
+    floatIntensity={5 * compoundRate}
   >
     <Threlte.Mesh
       {visible}

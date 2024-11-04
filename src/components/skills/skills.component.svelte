@@ -77,11 +77,13 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 0 0 0 7%;
   }
 
   .inner-wrapper {
     /* outline: 1px solid purple; */
     /* padding: 15px; */
+    outline: 1px solid green;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -90,9 +92,11 @@
   }
 
   .content {
+    outline: 1px solid red;
     height: 100%;
-    width: 40%;
-    max-width: 1060px;
+    min-width: 500px;
+    max-width: 500px;
+
     /* outline: 1px solid red; */
     /* flex: 1; */
     display: flex;
@@ -108,7 +112,7 @@
     }
 
     .skill-icon {
-      $size: 100px;
+      $size: 70px;
       height: $size;
       width: $size;
       border-radius: 10%;
@@ -116,10 +120,21 @@
   }
 
   .shapes {
-    height: 700px;
-    /* outline: 1px solid green; */
-    width: 60%;
-    max-width: 1050px;
+    outline: 1px solid blue;
+
+    z-index: 10;
+    aspect-ratio: 2 / 1.5;
+    overflow: hidden;
+
     /* flex: 1; // Ensure it takes up more space as defined */
+
+    /* Ensure it takes up more space as defined */
+    width: 100%; /* Make it responsive to container's width */
+    max-width: 900px;
+    max-height: 700px;
+
+    /* @media (max-width: 1400px) {
+      max-width: 500px;
+    } */
   }
 </style>

@@ -2,7 +2,7 @@
   // Config
   const tiltStrong = 30;
   const lightPower = 0.5;
-  const size = 200;
+  const size = 150;
   const linearGradient =
     'radial-gradient(circle, rgba(194,188,170,1) 30%, rgba(227,224,217,0.7931547619047619) 100%)';
 
@@ -105,8 +105,6 @@
   .tilt-wrapper {
     perspective: 400px;
     position: relative;
-    width: 300px;
-    height: 300px;
   }
 
   /* Background layer with exaggerated tilt and dynamic light */
@@ -138,5 +136,6 @@
     z-index: 2; /* Foreground above the background */
     transition: transform 0.1s ease-out; /* Initial transition */
     transform: translateZ(50px); /* Pull forward for depth */
+    gap: 5px;
   }
 </style>
