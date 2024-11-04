@@ -71,6 +71,32 @@ p {
   padding: 0;
 }
 
+@media (max-width: 500px) {
+  h1 {
+    font-size: calc(var(--font-size-h1) - 15px);
+  }
+  h2 {
+    font-size: calc(var(--font-size-h2) - 10px);
+  }
+  h3 {
+    font-size: calc(var(--font-size-h3) - 4px);
+    font-weight: 500;
+  }
+  h4 {
+    font-size: var(--font-size-h4);
+    font-weight: 500;
+  }
+  h5 {
+    font-size: var(--font-size-h5);
+    // font-weight: 500;
+  }
+  p {
+    font-size: calc(var(--font-size-p) - 1px);
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .white-svg-icon {
   //https://codepen.io/sosuke/pen/Pjoqqp
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)

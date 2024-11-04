@@ -70,31 +70,44 @@
 
 <style lang="scss">
   .wrapper {
-    /* outline: 1px solid purple; */
-    /* padding: 15px; */
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 0 0 0 7%;
+
+    @media (max-width: 1250px) {
+      padding: 0 0 0 4%;
+    }
+
+    @media (max-width: 850px) {
+      padding: 0 5%;
+    }
   }
 
   .inner-wrapper {
-    /* outline: 1px solid purple; */
-    /* padding: 15px; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 1250px) {
+      gap: 0rem;
+    }
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
   }
 
   .content {
     height: 100%;
-    width: 40%;
-    max-width: 1060px;
-    /* outline: 1px solid red; */
-    /* flex: 1; */
+    $width: 500px;
+    min-width: $width;
+    max-width: $width;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -108,18 +121,44 @@
     }
 
     .skill-icon {
-      $size: 100px;
+      $size: 70px;
       height: $size;
       width: $size;
       border-radius: 10%;
     }
+
+    @media (max-width: 1250px) {
+      $width: 400px;
+      min-width: $width;
+      max-width: $width;
+      p {
+        font-size: 16px;
+      }
+      .skill-icon {
+        $size: 50px;
+        height: $size;
+        width: $size;
+      }
+    }
+
+    @media (max-width: 850px) {
+      width: 100%;
+      min-width: none;
+      max-width: none;
+    }
   }
 
   .shapes {
-    height: 700px;
-    /* outline: 1px solid green; */
-    width: 60%;
-    max-width: 1050px;
-    /* flex: 1; // Ensure it takes up more space as defined */
+    z-index: 10;
+    aspect-ratio: 2 / 1.5; // This fix problem with scaling the SCENE
+    overflow: hidden;
+
+    width: 100%; /* Make it responsive to container's width */
+    max-width: 900px;
+    max-height: 700px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 </style>

@@ -33,5 +33,9 @@
       border-bottom: 1px solid var(--color-accent);
       padding: 0 10%;
     }
+
+    @media (max-width: 500px) {
+      gap: 0.3rem;
+    }
   }
 </style>
