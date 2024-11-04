@@ -123,12 +123,9 @@
     outline: 1px solid blue;
 
     z-index: 10;
-    aspect-ratio: 2 / 1.5;
+    aspect-ratio: 2 / 1.5; // This fix problem with scaling the SCENE
     overflow: hidden;
 
-    /* flex: 1; // Ensure it takes up more space as defined */
-
-    /* Ensure it takes up more space as defined */
     width: 100%; /* Make it responsive to container's width */
     max-width: 900px;
     max-height: 700px;
