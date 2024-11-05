@@ -7,34 +7,24 @@
   let videoName = 'geometric-shapes.1920x1080.mp4';
 
   onMount(() => {
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
-    if (prefersReducedMotion) {
-      gsap.to('.name-animation', { opacity: 1 });
-      gsap.to('.job-title', { opacity: 1 });
-      return;
-    }
-
     const tl = gsap.timeline();
+
     tl.fromTo(
       '.letter-animation',
       {
         y: -200,
         x: -200,
         opacity: 0,
-        rotate: -70,
+        rotate: -40,
       },
       {
         y: 0,
         x: 0,
-        z: 0,
         rotate: 0,
         opacity: 1,
         ease: 'back.out(3)',
 
         duration: 0.5,
-        transformOrigin: 'left top',
         delay: 0.5,
         stagger: {
           each: 0.1,
@@ -42,6 +32,7 @@
         },
       }
     );
+
     tl.fromTo(
       '.job-animation',
       {

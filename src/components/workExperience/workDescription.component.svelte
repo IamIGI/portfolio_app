@@ -31,21 +31,6 @@
         duration: 0.5,
       }
     );
-    tl.fromTo(
-      '.job-animation',
-      {
-        y: 20,
-        opacity: 0,
-        scale: 1.2,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scale: 1,
-        ease: 'elastic.out(1,0.3)',
-      }
-    );
   }
 
   function observeElement(node: HTMLElement): { destroy(): void } {
