@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Saos from 'saos';
   import WorkDate from './workDate.component.svelte';
   import WorkDescription from './workDescription.component.svelte';
   import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
@@ -55,11 +54,7 @@
     <div class="item-wrapper">
       {#if index % 2 === 0}
         <div class="work-time flex-end">
-          <!-- <Saos
-            animation={'from-left 0.6s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-          > -->
           <WorkDate date={experience.date} />
-          <!-- </Saos> -->
         </div>
         <div class="work-line">
           <div class="work-line-relative">
@@ -69,19 +64,11 @@
           </div>
         </div>
         <div class="work-description flex-start">
-          <Saos
-            animation={'from-right 0.6s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-          >
-            <WorkDescription {experience} />
-          </Saos>
+          <WorkDescription {experience} fromWhere={'right'} />
         </div>
       {:else}
         <div class="work-description flex-end">
-          <Saos
-            animation={'from-left 0.6s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-          >
-            <WorkDescription {experience} />
-          </Saos>
+          <WorkDescription {experience} fromWhere={'left'} />
         </div>
 
         <div class="work-line">
@@ -92,11 +79,7 @@
           </div>
         </div>
         <div class="work-time flex-start">
-          <!-- <Saos
-            animation={'from-right 0.6s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'}
-          > -->
           <WorkDate date={experience.date} />
-          <!-- </Saos> -->
         </div>
       {/if}
     </div>

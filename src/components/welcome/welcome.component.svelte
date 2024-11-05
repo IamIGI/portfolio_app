@@ -7,27 +7,54 @@
   let videoName = 'geometric-shapes.1920x1080.mp4';
 
   onMount(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    if (prefersReducedMotion) {
+      gsap.to('.name-animation', { opacity: 1 });
+      gsap.to('.job-title', { opacity: 1 });
+      return;
+    }
+
     const tl = gsap.timeline();
     tl.fromTo(
       '.letter-animation',
       {
-        y: -300,
+        y: -200,
+        x: -200,
         opacity: 0,
-        rotate: -10,
+        rotate: -70,
       },
       {
         y: 0,
+        x: 0,
+        z: 0,
         rotate: 0,
         opacity: 1,
-        ease: 'elastic.out(1,0.5)',
+        ease: 'back.out(3)',
 
-        duration: 2.5,
+        duration: 0.5,
         transformOrigin: 'left top',
         delay: 0.5,
         stagger: {
           each: 0.1,
           from: 'random',
         },
+      }
+    );
+    tl.fromTo(
+      '.job-animation',
+      {
+        y: 20,
+        opacity: 0,
+        scale: 1.2,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scale: 1,
+        ease: 'elastic.out(1,0.3)',
       }
     );
   });
@@ -56,9 +83,9 @@
         </h1>
       </div>
       <h2>
-        A passionate <span>software developer</span> with a strong foundation in
-        software testing, <br />bridging the gap between clean code and quality
-        assurance.
+        A passionate <span class="job-animation">software developer</span> with a
+        strong foundation in software testing, bridging the gap between clean code
+        and quality assurance.
       </h2>
     </div>
     <div class="welcome-image">
@@ -104,6 +131,7 @@
 
       .name {
         .letter-animation {
+          /* Both this property are required for animations to work */
           display: inline-block;
           opacity: 0;
         }
@@ -118,10 +146,14 @@
         text-align: right;
         color: white;
         gap: 3rem;
+        max-width: 1100px;
 
-        span {
+        .job-animation {
+          display: inline-block;
+          opacity: 0;
           color: var(--color-accent-welcome);
-          /* color: #216e1e; */
+          font-size: 50px;
+          line-height: 50px;
         }
 
         h1 {
