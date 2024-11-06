@@ -113,5 +113,9 @@
     @media (max-width: 1000px) {
       padding: 0 4%;
     }
+
+    @media (max-width: 550px) {
+      gap: 2rem;
+    }
   }
 </style>

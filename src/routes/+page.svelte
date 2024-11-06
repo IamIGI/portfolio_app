@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Contact from '../components/contact/contact.component.svelte';
   import Footer from '../components/footer/footer.component.svelte';
   import NavigateTop from '../components/navigateTop/navigateTop.component.svelte';
   import Projects from '../components/projects/projects.component.svelte';
@@ -13,6 +14,7 @@
   <WorkExperience />
   <Skills />
   <Projects />
+  <Contact />
   <Footer />
 </div>
 

@@ -52,19 +52,19 @@
   <!-- Right Section: SVG Icons -->
   <div class="icons">
     <img
-      src="/svg/media/linkedin.svg"
+      src="/svg/media/linkedin_2.svg"
       alt="li"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img
       src="/svg/media/document.svg"
       alt="cv"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img
-      src="/svg/media/facebook.svg"
+      src="/svg/media/email.svg"
       alt="fb"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img src="/svg/language/flag-pl.svg" alt="flag" class="svg-icon" />
   </div>
@@ -131,6 +131,7 @@
     }
 
     .svg-icon {
+      /* outline: 1px solid red; */
       $size: 45px;
       height: $size;
       width: $size;
