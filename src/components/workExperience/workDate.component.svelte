@@ -28,7 +28,7 @@
 
     p {
       color: var(--main-second-text-color);
-      font-size: 14px;
+      /* font-size: 14px; */
     }
 
     transition: transform 0.5s;

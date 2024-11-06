@@ -70,8 +70,11 @@ p {
   margin: 0;
   padding: 0;
 }
+li {
+  font-size: var(--font-size-li);
+}
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   h1 {
     font-size: calc(var(--font-size-h1) - 15px);
   }
