@@ -34,6 +34,9 @@
       padding: 0 10%;
     }
 
+    @media (max-width: 1050px) {
+      width: 85%;
+    }
     @media (max-width: 500px) {
       gap: 0.3rem;
     }
