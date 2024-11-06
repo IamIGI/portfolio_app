@@ -51,7 +51,7 @@
   });
 </script>
 
-<div class="welcome-section">
+<div class="welcome-section" id="home">
   <!-- Background Video -->
   <video class="background-video" autoplay muted loop>
     <source src={`/videos/${videoName}`} type="video/mp4" />

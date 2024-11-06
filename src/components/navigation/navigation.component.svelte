@@ -21,7 +21,7 @@
 
   const handleNavigate = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth', // Smooth scroll effect
+      behavior: 'smooth',
       block: 'start', // Align to the start of the div
     });
   };
@@ -32,13 +32,21 @@
   <div class="title"><img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.</div>
 
   <!-- Center Section: Navigation Links -->
+
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a on:click={() => handleNavigate('work_experience')}>Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
+    <li>
+      <a on:click={() => handleNavigate('home')}>Home</a>
+    </li>
+    <li>
+      <a on:click={() => handleNavigate('projects')}>Projects</a>
+    </li>
+    <li><a on:click={() => handleNavigate('skills')}>Skills</a></li>
+    <li>
+      <a on:click={() => handleNavigate('work_experience')}>Work</a>
+    </li>
+    <li>
+      <a on:click={() => handleNavigate('contact')}>Contact</a>
+    </li>
   </ul>
 
   <!-- Right Section: SVG Icons -->

@@ -67,7 +67,7 @@
   ];
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="projects">
   <SectionTitle
     title={'Projects.'}
     description={'Take a look at my recent projects'}
