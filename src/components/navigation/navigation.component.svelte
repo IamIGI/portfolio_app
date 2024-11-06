@@ -21,7 +21,7 @@
 
   const handleNavigate = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth', // Smooth scroll effect
+      behavior: 'smooth',
       block: 'start', // Align to the start of the div
     });
   };
@@ -32,31 +32,39 @@
   <div class="title"><img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.</div>
 
   <!-- Center Section: Navigation Links -->
+
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a on:click={() => handleNavigate('work_experience')}>Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
+    <li>
+      <a on:click={() => handleNavigate('home')}>Home</a>
+    </li>
+    <li>
+      <a on:click={() => handleNavigate('projects')}>Projects</a>
+    </li>
+    <li><a on:click={() => handleNavigate('skills')}>Skills</a></li>
+    <li>
+      <a on:click={() => handleNavigate('work_experience')}>Work</a>
+    </li>
+    <li>
+      <a on:click={() => handleNavigate('contact')}>Contact</a>
+    </li>
   </ul>
 
   <!-- Right Section: SVG Icons -->
   <div class="icons">
     <img
-      src="/svg/media/linkedin.svg"
+      src="/svg/media/linkedin_2.svg"
       alt="li"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img
       src="/svg/media/document.svg"
       alt="cv"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img
-      src="/svg/media/facebook.svg"
+      src="/svg/media/email.svg"
       alt="fb"
-      class={`svg-icon white-svg-icon ${isScrolled ? 'black-svg-icon' : ''}`}
+      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
     />
     <img src="/svg/language/flag-pl.svg" alt="flag" class="svg-icon" />
   </div>
@@ -123,6 +131,7 @@
     }
 
     .svg-icon {
+      /* outline: 1px solid red; */
       $size: 45px;
       height: $size;
       width: $size;

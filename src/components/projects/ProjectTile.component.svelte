@@ -40,14 +40,6 @@
 </div>
 
 <style lang="scss">
-  $first-tile-background-color: #232121;
-  $first-font-color: #706e6c;
-  $first-font-title-color: #c3c1c0;
-
-  $second-tile-background-color: #edebe8;
-  $second-font-color: #959392;
-  $second-font-title-color: #4f4d4c;
-
   $border-radius: 20px;
 
   .wrapper {
@@ -63,11 +55,11 @@
     padding: 40px 6% 0 6%;
     border-radius: $border-radius;
     gap: 6rem;
-    background-color: $first-tile-background-color;
+    background-color: var(--first-tile-background-color);
     h1,
     h4,
     h5 {
-      color: $first-font-title-color;
+      color: var(--first-font-title-color);
       margin-bottom: 10px;
     }
     h4 {
@@ -76,22 +68,22 @@
     p,
     ul,
     li {
-      color: $first-font-color;
+      color: var(--first-font-color);
       margin-bottom: 10px;
     }
   }
   .wrapper-nd2 {
     flex-direction: row-reverse;
-    background-color: $second-tile-background-color;
+    background-color: var(--second-tile-background-color);
     h1,
     h4,
     h5 {
-      color: $second-font-title-color;
+      color: var(--second-font-title-color);
     }
     p,
     ul,
     li {
-      color: $second-font-color;
+      color: var(--second-font-color);
     }
   }
 

@@ -42,7 +42,7 @@
   });
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="skills">
   <SectionTitle
     title={'Technology Stack.'}
     description={'Technologies I use to build responsive, full-featured web applications for my personal and commercial projects'}
