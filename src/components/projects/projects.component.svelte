@@ -7,8 +7,8 @@
     title: string;
     techStack: string[];
     description: string;
-    github: string;
     imgUrl: string;
+    github?: string;
     projectBoard?: string;
     websiteLink?: string;
     figmaLink?: string;
@@ -56,13 +56,13 @@
     },
     //-----Countries----------
     {
-      title: 'Kraje_świata',
+      title: 'Elektroniczna Karta Meldunkowa',
       description:
-        'Aplikacja umożliwia przeglądanie wszystkich krajów z API na stronie głównej oraz wyszukiwanie kraju za pomocą pola tekstowego. Użytkownicy mogą filtrować kraje według regionów i klikać na konkretne państwa, aby uzyskać szczegółowe informacje. Interfejs dostosowuje się do rozmiaru ekranu urządzenia, a dodatkowo aplikacja oferuje możliwość przełączania między trybem jasnym a ciemnym.',
-      techStack: ['React', 'Redux', 'Typescript', 'clean css'],
-      github: 'https://github.com/IamIGI/REST-Countries-API',
-      websiteLink: 'https://iamigi.github.io/REST-Countries-API/',
-      imgUrl: '/images/projects/countriesApp.JPG',
+        'Jako programista firmy McComp napisałem tę aplikację, aby umożliwić hotelom promowanie własnych usług oraz ofert partnerów, otwierając nowy kanał marketingowy. Aplikacja zapewnia pełną elastyczność konfiguracji – wygląd karty meldunkowej można dowolnie modyfikować. Dodatkowo usprawnia rejestrację gości i zwiększa efektywność pracy recepcji, digitalizując proces meldunkowy, eliminując papierowe dokumenty i upraszczając zarządzanie zgodami RODO.',
+      techStack: ['Vue', 'Pinia', 'Ionic', 'Typescript'],
+      websiteLink:
+        'https://www.mccomp.pl/horeca-i-wellness/elektroniczna-karta-meldunkowa/',
+      imgUrl: '/images/projects/ekm.JPG',
     },
   ];
 </script>

@@ -6,5 +6,7 @@ translatorApp:
   desc: 'TranslatorApp is a frontend project for a translation application that utilizes an external service to translate any language into a selected one. Key features of the app include a large language database, translation history, the ability to save favorites, dark mode, and a responsive design (RWD) optimized for both mobile and desktop devices.'
 countriesApp:
   desc: "The application allows users to view all countries from the API on the homepage and search for a specific country using an input field. Users can filter countries by region and click on individual countries to see detailed information. The interface adapts to the device's screen size, and the application also offers the option to toggle between light and dark mode."
+ekm:
+  desc: 'As a developer at McComp, I created this application to enable hotels to promote their own services and partner offers, opening a new marketing channel. The application provides full configuration flexibility – the check-in card layout can be customized freely. Additionally, it streamlines guest registration and enhances reception efficiency by digitizing the check-in process, eliminating paper documents, and simplifying GDPR consent management'
 others:
   desc: "Feel free to explore my other projects! Visit my GitHub profile to see the full range of my skills and completed endeavors. Discover the diversity of my projects and the technologies I've used to bring them to life!"
