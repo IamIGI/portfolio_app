@@ -27,6 +27,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 4rem;
+    /* gap: 4rem; */
   }
 </style>

@@ -98,6 +98,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-top: var(--gap-between-sections);
   }
   .inner-wrapper {
     /* outline: 1px solid purple; */

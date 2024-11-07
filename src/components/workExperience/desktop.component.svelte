@@ -5,7 +5,7 @@
   export let workExperience: T.WorkExperience[];
 </script>
 
-<div class="wrapper" id="work_experience">
+<div class="wrapper">
   {#each workExperience as experience, index}
     <div class="item-wrapper">
       {#if index % 2 === 0}
