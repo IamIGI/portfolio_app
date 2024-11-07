@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import LocalLink from './localLink.component.svelte';
 
   let isScrolled: boolean = false;
 
@@ -18,38 +19,29 @@
       isScrolled = false;
     }
   };
-
-  const handleNavigate = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start', // Align to the start of the div
-    });
-  };
 </script>
 
 <nav class={isScrolled ? 'scrolled' : ''}>
-  <!-- Left Section: Title -->
   <div class="title"><img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.</div>
-
-  <!-- Center Section: Navigation Links -->
 
   <ul>
     <li>
-      <a on:click={() => handleNavigate('home')}>Home</a>
+      <LocalLink id="home" name="Home" {isScrolled} />
     </li>
     <li>
-      <a on:click={() => handleNavigate('projects')}>Projects</a>
-    </li>
-    <li><a on:click={() => handleNavigate('skills')}>Skills</a></li>
-    <li>
-      <a on:click={() => handleNavigate('work_experience')}>Work</a>
+      <LocalLink id="work_experience" name="Work" {isScrolled} />
     </li>
     <li>
-      <a on:click={() => handleNavigate('contact')}>Contact</a>
+      <LocalLink id="skills" name="Skills" {isScrolled} />
+    </li>
+    <li>
+      <LocalLink id="projects" name="Projects" {isScrolled} />
+    </li>
+    <li>
+      <LocalLink id="contact" name="Contact" {isScrolled} />
     </li>
   </ul>
 
-  <!-- Right Section: SVG Icons -->
   <div class="icons">
     <img
       src="/svg/media/linkedin_2.svg"
@@ -107,7 +99,7 @@
     ul {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 1rem;
 
       li a {
         text-decoration: none;

@@ -44,7 +44,7 @@
   ];
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="work_experience">
   <SectionTitle
     title={'Work experience'}
     description={'Practical skills, responsibilities, and achievements gained in professional roles, showcasing career growth and expertise in a software developer field.'}
@@ -65,6 +65,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-top: var(--gap-between-sections);
   }
   .desktop,
   .mobile {

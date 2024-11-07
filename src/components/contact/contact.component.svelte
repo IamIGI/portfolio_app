@@ -40,6 +40,7 @@
     gap: 2rem;
     align-items: center;
     width: 100%;
+    padding: 4rem 0;
     /* outline: 1px solid red; */
     @media (max-width: 550px) {
       gap: 1rem;

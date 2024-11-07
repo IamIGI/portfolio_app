@@ -75,7 +75,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 0 0 7%;
+    padding: var(--gap-between-sections) 0 0 7%;
 
     @media (max-width: 1250px) {
       padding: 0 0 0 4%;
