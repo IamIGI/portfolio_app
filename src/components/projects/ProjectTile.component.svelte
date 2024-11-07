@@ -4,7 +4,7 @@
   export let title;
   export let techStack: string[];
   export let description: string;
-  export let githubLink: string;
+  export let githubLink: string | undefined = undefined;
   export let projectBoardLink: string | undefined = undefined;
   export let websiteLink: string | undefined = undefined;
   export let figmaLink: string | undefined = undefined;
@@ -18,7 +18,9 @@
     <h4>TECH: {techStack.join(', ').toUpperCase()}</h4>
     <p>{description}</p>
     <div class="links">
-      <Link link={githubLink} name="Github" {nd2} />
+      {#if githubLink}
+        <Link link={githubLink} name="Github" {nd2} />
+      {/if}
       {#if projectBoardLink}
         <Link link={projectBoardLink} name="Project" {nd2} />
       {/if}
@@ -43,6 +45,7 @@
   $border-radius: 20px;
 
   .wrapper {
+    /* outline: 1px solid orange; */
     height: 100%;
     width: 100%;
     min-width: 350px;
@@ -52,7 +55,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    padding: 40px 6% 0 6%;
+    padding: 40px 4% 0 4%;
     border-radius: $border-radius;
     gap: 6rem;
     background-color: var(--first-tile-background-color);
@@ -173,6 +176,10 @@
       flex-direction: column-reverse;
       padding: 6% 6% 0 6%;
       gap: 2rem;
+
+      h1 {
+        font-size: 35px;
+      }
     }
 
     .image-wrapper {

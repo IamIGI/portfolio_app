@@ -6,5 +6,8 @@ translatorApp:
   desc: 'TranslatorApp to frontendowy projekt aplikacji do tłumaczenia języków, który korzysta z zewnętrznego serwisu, umożliwiając tłumaczenie dowolnego języka na wybrany. Kluczowe funkcje aplikacji to szeroka baza języków, historia tłumaczeń oraz możliwość zapisywania ulubionych, tryb dark mode oraz responsywny design (RWD) dostosowany do urządzeń mobilnych i desktopowych.'
 countriesApp:
   desc: 'Aplikacja umożliwia przeglądanie wszystkich krajów z API na stronie głównej oraz wyszukiwanie kraju za pomocą pola tekstowego. Użytkownicy mogą filtrować kraje według regionów i klikać na konkretne państwa, aby uzyskać szczegółowe informacje. Interfejs dostosowuje się do rozmiaru ekranu urządzenia, a dodatkowo aplikacja oferuje możliwość przełączania między trybem jasnym a ciemnym.'
+ekm:
+  desc: 'Jako programista firmy McComp napisałem tę aplikację, aby umożliwić hotelom promowanie własnych usług oraz ofert partnerów, otwierając nowy kanał marketingowy. Aplikacja zapewnia pełną elastyczność konfiguracji – wygląd karty meldunkowej można dowolnie modyfikować. Dodatkowo usprawnia rejestrację gości i zwiększa efektywność pracy recepcji, digitalizując proces meldunkowy, eliminując papierowe dokumenty i upraszczając zarządzanie zgodami RODO.'
+
 others:
   desc: 'Zapraszam do odkrycia moich pozostałych projektów! Odwiedź mój profil na GitHubie, aby zobaczyć pełen zakres moich umiejętności oraz zrealizowanych przedsięwzięć. Przekonaj się sam, jak różnorodne są moje projekty i jakie technologie wykorzystałem w ich realizacji!'

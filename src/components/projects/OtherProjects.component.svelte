@@ -22,6 +22,19 @@
         />
       </li>
       <li>
+        <p><span>Countries_App</span> (React, Redux, Typescript)</p>
+        <Link
+          link="https://github.com/IamIGI/REST-Countries-API"
+          name="Github"
+          {nd2}
+        />
+        <Link
+          link="https://iamigi.github.io/REST-Countries-API/"
+          name="Website"
+          {nd2}
+        />
+      </li>
+      <li>
         <p><span>Interactive Comments Section</span> (React, Redux)</p>
         <Link
           link="https://github.com/IamIGI/Interactive-comments-section-FRONTEND"
