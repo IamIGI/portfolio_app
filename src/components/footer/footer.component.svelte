@@ -3,8 +3,9 @@
 
 <div class="footer-wrapper">
   <div class="upper-wrapper">
-    <div class="title">IGOR.</div>
-    <div class="description">FullStack software developer and salsa dancer</div>
+    <h1>IGOR.</h1>
+    <h2>FullStack software developer and salsa dancer</h2>
+
     <div class="media">
       <div class="media-icon">
         <img src="/svg/media/linkedin.svg" alt="li" class={` white-svg-icon`} />
@@ -40,6 +41,10 @@
     padding: 50px 0 30px 0;
     background-color: #3c4858;
     color: white; //TODO: night/day mode
+
+    @media (max-width: 1275px) {
+      padding: 30px 0 15px 0;
+    }
   }
 
   .upper-wrapper {
@@ -48,18 +53,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-
     padding: 10px 0;
-
-    .title {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
-    .description {
-      font-size: 30px;
-      font-weight: 700;
-    }
+    text-align: center;
 
     .media {
       display: flex;
@@ -77,6 +72,38 @@
           height: $size;
           width: $size;
         }
+      }
+    }
+
+    @media (max-width: 1500px) {
+      width: 90%;
+    }
+
+    @media (max-width: 1275px) {
+      h1 {
+        font-size: calc(var(--font-size-h1) - 10px);
+      }
+
+      h2 {
+        font-size: calc(var(--font-size-h2) - 6px);
+      }
+
+      .media {
+        .media-icon {
+          img {
+            $size: 35px;
+            height: $size;
+            width: $size;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1050px) {
+      justify-content: center;
+      gap: 2rem;
+      h2 {
+        display: none;
       }
     }
   }
