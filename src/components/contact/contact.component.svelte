@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ContactButton from './contactButton.component.svelte';
 </script>
 
 <div class="wrapper" id="contact">
@@ -8,29 +9,9 @@
     <!-- <p>Get in touch</p> -->
   </div>
   <div class="contact-wrapper">
-    <button class="button_1">
-      <span>email</span>
-      <img
-        src="/svg/media/email.svg"
-        alt="li"
-        class={`svg-icon white-svg-icon `}
-      />
-    </button>
-    <button class="button_2"
-      ><span>Linkedin</span>
-      <img
-        src="/svg/media/linkedin_2.svg"
-        alt="li"
-        class={`svg-icon white-svg-icon `}
-      /></button
-    >
-    <button class="button_1"
-      ><span>resume</span><img
-        src="/svg/media/document.svg"
-        alt="li"
-        class={`svg-icon white-svg-icon `}
-      /></button
-    >
+    <ContactButton text="email" button_color={1} />
+    <ContactButton text="linkedin" button_color={2} />
+    <ContactButton text="resume" button_color={1} />
   </div>
 </div>
 
@@ -47,7 +28,7 @@
     }
 
     @media (max-width: 480px) {
-      gap: 0rem;
+      gap: 1rem;
     }
   }
 
@@ -107,63 +88,6 @@
 
     @media (max-width: 800px) {
       gap: 1.3rem;
-      button {
-        scale: 0.9;
-      }
-    }
-
-    @media (max-width: 550px) {
-      gap: 0.7rem;
-      button {
-        scale: 0.8;
-      }
-    }
-
-    @media (max-width: 450px) {
-      gap: 0rem;
-      button {
-        scale: 0.75;
-      }
-    }
-
-    button {
-      font-size: 28px;
-      padding: 8px 20px 8px 20px;
-      border-radius: 8px;
-      border: none;
-      min-width: 230px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-transform: uppercase;
-      font-weight: 700;
-      span {
-        text-align: left;
-        /* outline: 1px solid red; */
-        min-width: 155px;
-      }
-
-      .svg-icon {
-        /* outline: 1px solid red; */
-        $size: 45px;
-        height: $size;
-        width: $size;
-      }
-    }
-
-    .button_1 {
-      background-color: #232121;
-      color: #959392;
-      img {
-        filter: var(--first-icon-color);
-      }
-    }
-    .button_2 {
-      background-color: #d4ccc0;
-      color: #959392;
-      img {
-        filter: var(--second-icon-color);
-      }
     }
   }
 </style>
