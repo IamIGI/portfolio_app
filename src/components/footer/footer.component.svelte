@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
   import IconButton from '../iconButton.component.svelte';
 </script>
 
@@ -8,9 +9,17 @@
     <h2>FullStack software developer and salsa dancer</h2>
 
     <div class="media">
-      <IconButton src="/svg/media/linkedin.svg" alt="li" />
-      <IconButton src="/svg/media/document.svg" alt="li" />
-      <IconButton src="/svg/media/email.svg" alt="li" />
+      <IconButton
+        src="/svg/media/linkedin.svg"
+        alt="li"
+        navigateURL={GLOBAL_VARS.linkedin}
+      />
+      <IconButton src="/svg/media/document.svg" alt="document" />
+      <IconButton
+        src="/svg/media/email.svg"
+        alt="fb"
+        textToCopy={GLOBAL_VARS.email}
+      />
     </div>
   </div>
   <div class="bottom-wrapper">
