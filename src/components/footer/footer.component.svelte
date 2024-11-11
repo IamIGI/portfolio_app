@@ -1,4 +1,5 @@
 <script lang="ts">
+  import IconButton from '../iconButton.component.svelte';
 </script>
 
 <div class="footer-wrapper">
@@ -7,20 +8,9 @@
     <h2>FullStack software developer and salsa dancer</h2>
 
     <div class="media">
-      <div class="media-icon">
-        <img src="/svg/media/linkedin.svg" alt="li" class={` white-svg-icon`} />
-      </div>
-
-      <div class="media-icon">
-        <img
-          src="/svg/media/document.svg"
-          alt="document"
-          class={` white-svg-icon`}
-        />
-      </div>
-      <div class="media-icon">
-        <img src="/svg/media/facebook.svg" alt="fb" class={` white-svg-icon`} />
-      </div>
+      <IconButton src="/svg/media/linkedin.svg" alt="li" />
+      <IconButton src="/svg/media/document.svg" alt="li" />
+      <IconButton src="/svg/media/email.svg" alt="li" />
     </div>
   </div>
   <div class="bottom-wrapper">
@@ -62,17 +52,6 @@
       justify-content: center;
       align-items: center;
       gap: 1rem;
-
-      .media-icon {
-        padding: 10px;
-        border: 1px solid white;
-        border-radius: 7px;
-        img {
-          $size: 45px;
-          height: $size;
-          width: $size;
-        }
-      }
     }
 
     @media (max-width: 1500px) {
@@ -86,16 +65,6 @@
 
       h2 {
         font-size: calc(var(--font-size-h2) - 6px);
-      }
-
-      .media {
-        .media-icon {
-          img {
-            $size: 35px;
-            height: $size;
-            width: $size;
-          }
-        }
       }
     }
 
