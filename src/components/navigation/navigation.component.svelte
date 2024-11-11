@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import LocalLink from './localLink.component.svelte';
+  import IconButton from '../iconButton.component.svelte';
 
   let isScrolled: boolean = false;
 
@@ -43,22 +44,9 @@
   </ul>
 
   <div class="icons">
-    <img
-      src="/svg/media/linkedin_2.svg"
-      alt="li"
-      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
-    />
-    <img
-      src="/svg/media/document.svg"
-      alt="cv"
-      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
-    />
-    <img
-      src="/svg/media/email.svg"
-      alt="fb"
-      class={`svg-icon ${isScrolled ? 'black-svg-icon' : 'white-svg-icon'}`}
-    />
-    <img src="/svg/language/flag-pl.svg" alt="flag" class="svg-icon" />
+    <IconButton src="/svg/media/linkedin.svg" alt="li" {isScrolled} />
+    <IconButton src="/svg/media/document.svg" alt="document" {isScrolled} />
+    <IconButton src="/svg/media/email.svg" alt="fb" {isScrolled} />
   </div>
 </nav>
 
@@ -120,13 +108,6 @@
     .icons {
       display: flex;
       gap: 1rem;
-    }
-
-    .svg-icon {
-      /* outline: 1px solid red; */
-      $size: 45px;
-      height: $size;
-      width: $size;
     }
   }
 </style>
