@@ -1,4 +1,6 @@
 <script lang="ts">
+  import notificationsUtils from '$lib/utils/notifications.utils';
+
   export let src: string;
   export let alt: string;
   export let isScrolled: boolean = false;
@@ -18,6 +20,7 @@
     }
     if (textToCopy !== undefined) {
       navigator.clipboard.writeText(textToCopy);
+      notificationsUtils.showInformation('Email skopiowany');
     }
   }
 </script>
