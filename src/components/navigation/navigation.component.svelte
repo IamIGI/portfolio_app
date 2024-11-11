@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import LocalLink from './localLink.component.svelte';
   import IconButton from '../iconButton.component.svelte';
+  import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
 
   let isScrolled: boolean = false;
 
@@ -44,9 +45,19 @@
   </ul>
 
   <div class="icons">
-    <IconButton src="/svg/media/linkedin.svg" alt="li" {isScrolled} />
+    <IconButton
+      src="/svg/media/linkedin.svg"
+      alt="li"
+      {isScrolled}
+      navigateURL={GLOBAL_VARS.linkedin}
+    />
     <IconButton src="/svg/media/document.svg" alt="document" {isScrolled} />
-    <IconButton src="/svg/media/email.svg" alt="fb" {isScrolled} />
+    <IconButton
+      src="/svg/media/email.svg"
+      alt="fb"
+      {isScrolled}
+      textToCopy={GLOBAL_VARS.email}
+    />
   </div>
 </nav>
 
