@@ -1,5 +1,6 @@
 <script lang="ts">
   import notificationsUtils from '$lib/utils/notifications.utils';
+  import { createEventDispatcher } from 'svelte';
 
   export let src: string;
   export let alt: string;
@@ -8,20 +9,26 @@
   export let download: string | undefined = undefined;
   export let textToCopy: string | undefined = undefined;
 
+  const dispatch = createEventDispatcher<{ onClick: void }>();
+
   function handleClick() {
     if (navigateURL !== undefined) {
-      console.log(navigateURL);
       if (!/^https?:\/\//i.test(navigateURL)) {
         navigateURL = 'https://' + navigateURL;
       }
       window.open(navigateURL, '_blank'); //open in new tab
+      return;
     }
     if (download !== undefined) {
+      return;
     }
     if (textToCopy !== undefined) {
       navigator.clipboard.writeText(textToCopy);
       notificationsUtils.showInformation('Email skopiowany');
+      return;
     }
+    //Triggered only when other options are undefined
+    dispatch('onClick');
   }
 </script>
 

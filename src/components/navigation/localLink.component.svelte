@@ -1,13 +1,18 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   export let name: string;
   export let id: string;
   export let isScrolled: boolean;
+
+  const dispatch = createEventDispatcher<{ onClick: void }>();
 
   const handleNavigate = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start', // Align to the start of the div
     });
+    dispatch('onClick');
   };
 </script>
 
@@ -39,6 +44,7 @@
     text-transform: uppercase;
     font-size: 1.4rem;
     cursor: pointer;
+    width: 100%;
 
     &:hover {
       &:after {
@@ -59,12 +65,14 @@
       width: 100%;
       color: #323237;
       display: block;
+      padding: 0 15px;
       transition: $speed;
       position: absolute;
       background: transparent;
       content: attr(data-back);
       transform: translateY(-50%) rotateX(90deg);
       border-bottom: 1px solid gray;
+      text-align: center;
     }
 
     &:before {
@@ -82,6 +90,8 @@
       content: attr(data-front);
       transform: translateY(0) rotateX(0);
       border-bottom: 1px solid transparent;
+      width: 100%;
+      text-align: center;
     }
 
     &.scrolled {
@@ -90,6 +100,26 @@
 
       &:before {
         color: black;
+      }
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1100px) {
+      &:before,
+      &:after {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 550px) {
+      &:before,
+      &:after {
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 50px;
       }
     }
   }

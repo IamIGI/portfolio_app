@@ -1,85 +1,118 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import LocalLink from './localLink.component.svelte';
   import IconButton from '../iconButton.component.svelte';
-  import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
+  import Links from './links.component.svelte';
+  import Icons from './icons.component.svelte';
 
   let isScrolled: boolean = false;
+  let isMobileMenuOpen: boolean = false;
+  let mobileNav: HTMLDivElement | null = null;
 
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   });
 
-  const handleScroll = () => {
+  function handleScroll() {
     if (window.scrollY > 50) {
       isScrolled = true;
     } else {
+      if (!isMobileMenuOpen) isScrolled = false;
+    }
+  }
+
+  function toggleMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+    if (mobileNav) {
+      mobileNav.style.display = isMobileMenuOpen ? 'flex' : 'none';
+      isScrolled = true;
+    }
+    if (!isMobileMenuOpen && window.scrollY < 50) {
       isScrolled = false;
     }
-  };
+  }
+
+  function handleResize() {
+    if (window.innerWidth >= 1100) {
+      isMobileMenuOpen = false;
+      if (mobileNav) {
+        mobileNav.style.display = 'none';
+      }
+    }
+  }
+
+  function closeMobileMenu() {
+    isMobileMenuOpen = false;
+    if (mobileNav) mobileNav.style.display = 'none';
+  }
 </script>
 
-<nav class={isScrolled ? 'scrolled' : ''}>
-  <div class="title"><img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.</div>
-
-  <ul>
-    <li>
-      <LocalLink id="home" name="Home" {isScrolled} />
-    </li>
-    <li>
-      <LocalLink id="work_experience" name="Work" {isScrolled} />
-    </li>
-    <li>
-      <LocalLink id="skills" name="Skills" {isScrolled} />
-    </li>
-    <li>
-      <LocalLink id="projects" name="Projects" {isScrolled} />
-    </li>
-    <li>
-      <LocalLink id="contact" name="Contact" {isScrolled} />
-    </li>
-  </ul>
-
-  <div class="icons">
-    <IconButton
-      src="/svg/media/linkedin.svg"
-      alt="li"
+<div class="wrapper {isScrolled ? 'scrolled' : ''}">
+  <nav>
+    <div class="title">
+      <img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.
+    </div>
+    <div class="hamburger-button">
+      <IconButton
+        src="/svg/media/hamburger.svg"
+        alt="li"
+        {isScrolled}
+        on:onClick={toggleMenu}
+      />
+    </div>
+    <div class="links-wrapper">
+      <Links {isScrolled} />
+    </div>
+    <div class="icons">
+      <Icons {isScrolled} />
+    </div>
+  </nav>
+  <div class="mobile-nav" bind:this={mobileNav}>
+    <Links
       {isScrolled}
-      navigateURL={GLOBAL_VARS.linkedin}
+      flexDirection="column"
+      on:onLinkClicked={closeMobileMenu}
     />
-    <IconButton src="/svg/media/document.svg" alt="document" {isScrolled} />
-    <IconButton
-      src="/svg/media/email.svg"
-      alt="fb"
-      {isScrolled}
-      textToCopy={GLOBAL_VARS.email}
-    />
+    <div class="mobile-icons">
+      <Icons {isScrolled} />
+    </div>
   </div>
-</nav>
+</div>
 
 <style lang="scss">
-  nav {
-    position: fixed; // Ensures the nav is fixed at the top
+  .wrapper {
+    position: fixed;
     top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+
+    &.scrolled {
+      background-color: var(--main-background-color);
+      color: var(--first-font-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      nav {
+        .title {
+          color: var(--first-font-color);
+        }
+      }
+    }
+  }
+  nav {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 15rem;
     background-color: transparent;
-    transition: background-color 0.3s ease;
-    z-index: 100; // Keep it on top of other content
     color: white;
-
-    &.scrolled {
-      background-color: var(--main-background-color);
-      color: black;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
 
     .title {
       font-size: 2.5rem;
@@ -93,32 +126,74 @@
         height: $size;
         width: $size;
       }
-    }
 
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 1rem;
-
-      li a {
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 1.4rem;
-        font-weight: 500;
-        transition:
-          color 0.3s ease,
-          font-size 0.3s ease;
-
-        &:hover {
-          color: gray;
-          font-size: calc(1.4rem + 5px);
-        }
+      &.scrolled {
+        color: black;
       }
     }
 
     .icons {
       display: flex;
       gap: 1rem;
+    }
+
+    .hamburger-button {
+      display: none;
+    }
+
+    @media (max-width: 1650px) {
+      padding: 1rem 5rem;
+    }
+
+    @media (max-width: 1300px) {
+      padding: 1rem 3rem;
+
+      .icons {
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .links-wrapper,
+      .icons {
+        display: none;
+      }
+      .hamburger-button {
+        display: flex;
+      }
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+    width: 100%;
+    transition: 0.5s;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 30px 3rem;
+    overflow: hidden;
+
+    .mobile-icons {
+      display: flex;
+    }
+
+    @media (min-width: 1100px) {
+      display: none;
+    }
+
+    @media (max-width: 550px) {
+      height: 100vh;
+      padding: 0;
+
+      .mobile-icons {
+        width: 100%;
+        padding: 0 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 </style>
