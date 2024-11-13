@@ -106,6 +106,8 @@
     }
   }
   nav {
+    margin: auto;
+    max-width: 1920px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -125,10 +127,6 @@
         $size: 40px;
         height: $size;
         width: $size;
-      }
-
-      &.scrolled {
-        color: black;
       }
     }
 
@@ -189,7 +187,7 @@
 
       .mobile-icons {
         width: 100%;
-        padding: 0 25%;
+        padding: 0 15%;
         display: flex;
         justify-content: space-between;
         align-items: center;
