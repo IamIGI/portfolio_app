@@ -22,8 +22,9 @@ const languageStore = () => {
   }
 
   function setDefault() {
-    //TODO:  PA-76: Download user localization and set default language by that
-    set(Lang.PL);
+    //Download user localization and set default language by that
+    const userLocale = new Intl.DateTimeFormat().resolvedOptions().locale;
+    if (userLocale === 'pl') set(Lang.PL);
   }
 
   return {
