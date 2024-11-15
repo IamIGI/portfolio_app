@@ -7,6 +7,17 @@
   let videoName = 'geometric-shapes.1920x1080.mp4';
 
   onMount(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      gsap.to('.letter-animation', { opacity: 1 });
+      gsap.to('.job-animation', { opacity: 1 });
+      gsap.to('.welcome-image', { opacity: 1 });
+      return;
+    }
+
     const tl = gsap.timeline();
 
     tl.fromTo(
