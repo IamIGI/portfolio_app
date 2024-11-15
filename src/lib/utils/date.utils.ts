@@ -47,10 +47,6 @@ function timeSpentOnActivity(startDate: string, endDate?: string): string {
   return result || '0 months'; // Handle case with no time spent
 }
 
-// Example usage:
-console.log(timeSpentOnActivity('2023.07')); // Calculates from 2023.07 to the current date
-console.log(timeSpentOnActivity('2023.07', '2024.10')); // Calculates from 2023.07 to 2024.10
-
 export default {
   timeSpentOnActivity,
 };
