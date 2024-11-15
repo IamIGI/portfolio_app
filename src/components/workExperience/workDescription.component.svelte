@@ -9,13 +9,13 @@
   const xStartPosition = 800;
 
   function animateWorkExperience() {
-    // const prefersReducedMotion = window.matchMedia(
-    //   '(prefers-reduced-motion: reduce)'
-    // ).matches;
-    // if (prefersReducedMotion) {
-    //   gsap.to('.work-description-content', { opacity: 1 });
-    //   return;
-    // }
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    if (prefersReducedMotion) {
+      gsap.to('.work-description-content', { opacity: 1 });
+      return;
+    }
 
     const tl = gsap.timeline();
     tl.fromTo(
