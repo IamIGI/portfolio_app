@@ -9,9 +9,10 @@
   let mobileNav: HTMLDivElement | null = null;
 
   onMount(() => {
+    if (window.scrollY > 50) isScrolled = true;
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);

@@ -223,7 +223,7 @@
     }
   }
 
-  @media (max-width: 810px) {
+  @media (max-width: 1000px) {
     .welcome-section {
       height: 70vh;
 
@@ -250,7 +250,7 @@
 
   @media (max-width: 450px) {
     .welcome-section {
-      height: 700px;
+      height: 800px;
 
       .content {
         padding-top: 70px;
