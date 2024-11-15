@@ -25,7 +25,7 @@
   textToCopy={GLOBAL_VARS.email}
 />
 <IconButton
-  src={`/svg/flags/${$languageStore}.svg`}
+  src={`/svg/flags/${$languageStore === Lang.PL ? Lang.ENG : Lang.PL}.svg`}
   alt="flag"
   {isScrolled}
   applyColorFilter={false}

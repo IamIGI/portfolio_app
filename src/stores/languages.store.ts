@@ -2,7 +2,7 @@ import { get, writable } from 'svelte/store';
 
 export enum Lang {
   PL = 'pl',
-  ENG = 'eng',
+  ENG = 'en',
 }
 
 const languageStore = () => {

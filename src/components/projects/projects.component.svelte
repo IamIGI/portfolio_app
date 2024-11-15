@@ -2,11 +2,11 @@
   import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
   import OtherProjects from './OtherProjects.component.svelte';
   import ProjectTile from './ProjectTile.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   const projects: {
-    title: string;
+    id: string;
     techStack: string[];
-    description: string;
     imgUrl: string;
     github?: string;
     projectBoard?: string;
@@ -14,7 +14,8 @@
     figmaLink?: string;
   }[] = [
     {
-      title: 'HotShot.tk',
+      id: 'hotshot',
+
       techStack: [
         'React JS',
         'Redux',
@@ -24,18 +25,15 @@
         'JWT',
         'Stripe',
       ],
-      description:
-        'HotShoot.tk to sklep internetowy z laptopami, nad którym pracuję od 2022 roku, rozwijając zarówno frontend, jak i backend. Platforma zapewnia bezpieczną autoryzację użytkowników, rozbudowany koszyk zakupowy, obsługę promocji, filtrowanie produktów oraz sekcję zarządzania kontem i zamówieniami. Użytkownicy mogą korzystać z sekcji artykułów i zaawansowanego systemu komentarzy, a także łatwo kontaktować się poprzez formularz. Dodatkowo, sklep umożliwia generowanie dokumentów PDF, jak faktury i podsumowania zamówień. Dzięki RWD strona działa płynnie na komputerach i urządzeniach mobilnych.',
       github: 'https://github.com/IamIGI/ComputerShop-typescript',
       projectBoard: 'https://github.com/users/IamIGI/projects/1/views/1',
       imgUrl: '/images/projects/hotShoot.JPG',
     },
     //--------PALETY EURO------------
     {
-      title: 'PaletyEuro s.c.',
+      id: 'paletyEuro',
+
       techStack: ['React', 'NextJs', 'Typescript', 'Figma'],
-      description:
-        'Strona internetowa została zaprojektowana na podstawie autorskiego projektu w Figma, przygotowanego w kilku wersjach kolorystycznych. Wyróżnia ją przemyślany, przyciągający wzrok układ, który jasno prezentuje, czym zajmuje się firma, gdzie ją znaleźć i co oferuje. Strona zawiera formularz kontaktowy oraz interaktywną mapę Google, ułatwiającą lokalizację.',
       github: 'https://github.com/IamIGI/Pallet-sale-office-Company-website',
       websiteLink: 'https://pallet-sale-office-company-website.vercel.app/',
       figmaLink:
@@ -45,10 +43,8 @@
     },
     //----Translator------------
     {
-      title: 'TranslatorApp',
+      id: 'translatorApp',
       techStack: ['Svelte', 'TypeScript', 'SCSS', 'translateplus.io'],
-      description:
-        'TranslatorApp to frontendowy projekt aplikacji do tłumaczenia języków, który korzysta z zewnętrznego serwisu, umożliwiając tłumaczenie dowolnego języka na wybrany. Kluczowe funkcje aplikacji to szeroka baza języków, historia tłumaczeń oraz możliwość zapisywania ulubionych, tryb dark mode oraz responsywny design (RWD) dostosowany do urządzeń mobilnych i desktopowych.',
       github: 'https://github.com/IamIGI/Translator_app',
       projectBoard: 'https://github.com/users/IamIGI/projects/12',
       websiteLink: 'https://translator-app-six-chi.vercel.app',
@@ -56,9 +52,7 @@
     },
     //-----Countries----------
     {
-      title: 'Elektroniczna Karta Meldunkowa',
-      description:
-        'Jako programista firmy McComp napisałem tę aplikację, aby umożliwić hotelom promowanie własnych usług oraz ofert partnerów, otwierając nowy kanał marketingowy. Aplikacja zapewnia pełną elastyczność konfiguracji – wygląd karty meldunkowej można dowolnie modyfikować. Dodatkowo usprawnia rejestrację gości i zwiększa efektywność pracy recepcji, digitalizując proces meldunkowy, eliminując papierowe dokumenty i upraszczając zarządzanie zgodami RODO.',
+      id: 'ekm',
       techStack: ['Vue', 'Pinia', 'Ionic', 'Typescript'],
       websiteLink:
         'https://www.mccomp.pl/horeca-i-wellness/elektroniczna-karta-meldunkowa/',
@@ -75,9 +69,9 @@
   <div class="inner-wrapper">
     {#each projects as p, index}
       <ProjectTile
-        title={p.title}
+        title={$t(`projects.${p.id}.title`)}
         techStack={p.techStack}
-        description={p.description}
+        description={$t(`projects.${p.id}.desc`)}
         imgUrl={p.imgUrl}
         githubLink={p.github}
         projectBoardLink={p.projectBoard}

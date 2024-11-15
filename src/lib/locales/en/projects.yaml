@@ -1,0 +1,21 @@
+hotshot:
+  title: 'HotShot.tk'
+  desc: 'HotShot.tk is an online laptop store I have been working on since 2022, developing both the frontend and backend. The platform offers secure user authentication, an advanced shopping cart, promotion handling, product filtering, and account and order management sections. Users can access an article section, an advanced commenting system, and easily contact support via a form. Additionally, the store enables the generation of PDF documents such as invoices and order summaries. Thanks to RWD, the website runs smoothly on both desktops and mobile devices.'
+paletyEuro:
+  title: 'PaletyEuro s.c.'
+  desc: 'The website was designed based on a custom project in Figma, prepared in several color variants. It features a well-thought-out, eye-catching layout that clearly showcases what the company does, where it can be found, and what it offers. The website includes a contact form and an interactive Google map for easier localization.'
+translatorApp:
+  title: 'TranslatorApp'
+  desc: 'TranslatorApp is a frontend project for a language translation application that uses an external service to translate any language into a selected one. Key features of the app include a wide database of languages, translation history, the ability to save favorites, a dark mode, and responsive design (RWD) adapted for mobile and desktop devices.'
+countriesApp:
+  title: 'CountriesApp'
+  desc: 'The application allows users to browse all countries via an API on the homepage and search for a country using a text field. Users can filter countries by regions and click on specific countries to get detailed information. The interface adapts to the screen size of the device, and the app also offers a toggle between light and dark modes.'
+ekm:
+  title: 'Electronic Registration Card'
+  desc: 'As a developer at McComp, I created this application to enable hotels to promote their own services and partner offers, opening a new marketing channel. The application offers full configuration flexibility – the appearance of the registration card can be freely customized. Additionally, it streamlines guest registration and increases reception efficiency by digitizing the check-in process, eliminating paper documents, and simplifying GDPR consent management.'
+others:
+  desc: 'Feel free to explore my other projects! Visit my GitHub profile to see the full range of my skills and completed endeavors. See for yourself how diverse my projects are and the technologies I used to realize them!'
+
+tile:
+  website: 'Website'
+  project: 'Project'

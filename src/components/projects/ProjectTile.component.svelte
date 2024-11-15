@@ -1,5 +1,6 @@
 <script lang="ts">
   import Link from './link.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   export let title;
   export let techStack: string[];
@@ -22,10 +23,14 @@
         <Link link={githubLink} name="Github" {nd2} />
       {/if}
       {#if projectBoardLink}
-        <Link link={projectBoardLink} name="Project" {nd2} />
+        <Link
+          link={projectBoardLink}
+          name={$t(`projects.tile.project`)}
+          {nd2}
+        />
       {/if}
       {#if websiteLink}
-        <Link link={websiteLink} name="Website" {nd2} />
+        <Link link={websiteLink} name={$t(`projects.tile.website`)} {nd2} />
       {/if}
     </div>
     {#if figmaLink}
