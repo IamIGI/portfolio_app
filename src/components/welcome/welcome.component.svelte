@@ -24,7 +24,7 @@
         opacity: 1,
         ease: 'back.out(3)',
 
-        duration: 0.5,
+        duration: 0.2,
         delay: 0.5,
         stagger: {
           each: 0.1,
@@ -43,7 +43,22 @@
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
+        scale: 1,
+        ease: 'elastic.out(1,0.3)',
+      }
+    );
+    tl.fromTo(
+      '.welcome-image',
+      {
+        y: 40,
+        opacity: 0,
+        scale: 1.3,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
         scale: 1,
         ease: 'elastic.out(1,0.3)',
       }
@@ -175,6 +190,7 @@
       }
 
       .welcome-image {
+        opacity: 0;
         $size: 600px;
         min-width: $size;
         min-height: $size;

@@ -2,15 +2,16 @@ import en from '$lib/locales/en';
 import pl from '$lib/locales/pl';
 import { addMessages, init, locale } from 'svelte-i18n';
 import languagesStore from '../stores/languages.store';
-// import languagesStore from '../stores/languages.store';
 
-// const initLang = languagesStore.getLang();
+languagesStore.setDefault();
+languagesStore.subscribe((lang) => {
+  console.log(lang);
+  locale.set(lang);
+});
 
-languagesStore.subscribe((lang) => locale.set(lang));
-console.log('layout triggered');
 init({
-  fallbackLocale: 'pl',
-  initialLocale: 'pl',
+  fallbackLocale: languagesStore.getLang(),
+  initialLocale: languagesStore.getLang(),
 });
 
 addMessages('en', en);
