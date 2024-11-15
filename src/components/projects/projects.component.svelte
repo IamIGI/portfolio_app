@@ -63,8 +63,8 @@
 
 <div class="wrapper" id="projects">
   <SectionTitle
-    title={'Projects.'}
-    description={'Take a look at my recent projects'}
+    title={$t('projects.section.title')}
+    description={$t('projects.section.desc')}
   />
   <div class="inner-wrapper">
     {#each projects as p, index}

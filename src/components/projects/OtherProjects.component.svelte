@@ -1,17 +1,14 @@
 <script lang="ts">
   import Link from './link.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   export let nd2: boolean = false; // index n2 will have other style properties
-
-  let title = 'Pozostałe projekty';
-  let description =
-    'Zapraszam do odkrycia moich pozostałych projektów! Odwiedź mój profil na GitHubie, aby zobaczyć pełen zakres moich umiejętności oraz zrealizowanych przedsięwzięć. Przekonaj się sam, jak różnorodne są moje projekty i jakie technologie wykorzystałem w ich realizacji!';
 </script>
 
 <div class="wrapper" class:wrapper-nd2={nd2}>
   <div class="content-wrapper">
-    <h1>{title}</h1>
-    <p>{description}</p>
+    <h1>{$t(`projects.others.title`)}</h1>
+    <p>{$t(`projects.others.desc`)}</p>
     <ul>
       <li>
         <p><span>LinkedinApp</span> (Angular, Typescript, NestJs, Socket.io)</p>
@@ -30,7 +27,7 @@
         />
         <Link
           link="https://iamigi.github.io/REST-Countries-API/"
-          name="Website"
+          name={$t(`projects.tile.website`)}
           {nd2}
         />
       </li>

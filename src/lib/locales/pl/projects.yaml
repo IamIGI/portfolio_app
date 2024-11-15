@@ -1,3 +1,7 @@
+section:
+  title: Projekty.
+  desc: Zobacz moje ostatnie projekty
+
 hotshot:
   title: 'HotShot.tk'
   desc: 'HotShoot.tk to sklep internetowy z laptopami, nad którym pracuję od 2022 roku, rozwijając zarówno frontend, jak i backend. Platforma zapewnia bezpieczną autoryzację użytkowników, rozbudowany koszyk zakupowy, obsługę promocji, filtrowanie produktów oraz sekcję zarządzania kontem i zamówieniami. Użytkownicy mogą korzystać z sekcji artykułów i zaawansowanego systemu komentarzy, a także łatwo kontaktować się poprzez formularz. Dodatkowo, sklep umożliwia generowanie dokumentów PDF, jak faktury i podsumowania zamówień. Dzięki RWD strona działa płynnie na komputerach i urządzeniach mobilnych.'
@@ -14,6 +18,7 @@ ekm:
   title: 'Elektroniczna Karta Meldunkowa'
   desc: 'Jako programista firmy McComp napisałem tę aplikację, aby umożliwić hotelom promowanie własnych usług oraz ofert partnerów, otwierając nowy kanał marketingowy. Aplikacja zapewnia pełną elastyczność konfiguracji – wygląd karty meldunkowej można dowolnie modyfikować. Dodatkowo usprawnia rejestrację gości i zwiększa efektywność pracy recepcji, digitalizując proces meldunkowy, eliminując papierowe dokumenty i upraszczając zarządzanie zgodami RODO.'
 others:
+  title: 'Pozostałe projekty'
   desc: 'Zapraszam do odkrycia moich pozostałych projektów! Odwiedź mój profil na GitHubie, aby zobaczyć pełen zakres moich umiejętności oraz zrealizowanych przedsięwzięć. Przekonaj się sam, jak różnorodne są moje projekty i jakie technologie wykorzystałem w ich realizacji!'
 
 tile:
