@@ -1,12 +1,13 @@
 <script lang="ts">
   import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
   import IconButton from '../iconButton.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 </script>
 
 <div class="footer-wrapper">
   <div class="upper-wrapper">
     <h1>IGOR.</h1>
-    <h2>FullStack software developer and salsa dancer</h2>
+    <h2>{$t('footer.desc')}</h2>
 
     <div class="media">
       <IconButton

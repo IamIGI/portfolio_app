@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import gsap from 'gsap';
+  import { _ as t } from 'svelte-i18n';
 
   let nameLetters = 'igor'.split('');
   let surnameLetters = 'kłusek'.split('');
@@ -81,7 +82,7 @@
   <!-- Background Video -->
   <video class="background-video" autoplay muted loop>
     <source src={`/videos/${videoName}`} type="video/mp4" />
-    Your browser does not support the video tag.
+    Ups. Your browser does not support the video tag.
   </video>
 
   <!-- Welcome Section Content -->
@@ -100,9 +101,10 @@
         </h1>
       </div>
       <h2>
-        A passionate <span class="job-animation">software developer</span> with a
-        strong foundation in software testing, bridging the gap between clean code
-        and quality assurance.
+        {$t('welcome.desc_1')}<span class="job-animation"
+          >{$t('welcome.job_title')}</span
+        >
+        {$t('welcome.desc_2')}
       </h2>
     </div>
     <div class="welcome-image">

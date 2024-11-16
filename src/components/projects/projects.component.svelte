@@ -15,7 +15,6 @@
   }[] = [
     {
       id: 'hotshot',
-
       techStack: [
         'React JS',
         'Redux',
@@ -32,7 +31,6 @@
     //--------PALETY EURO------------
     {
       id: 'paletyEuro',
-
       techStack: ['React', 'NextJs', 'Typescript', 'Figma'],
       github: 'https://github.com/IamIGI/Pallet-sale-office-Company-website',
       websiteLink: 'https://pallet-sale-office-company-website.vercel.app/',

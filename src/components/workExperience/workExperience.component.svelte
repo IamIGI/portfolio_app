@@ -2,52 +2,41 @@
   import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
   import Desktop from './desktop.component.svelte';
   import Mobile from './mobile.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   const workExperience: T.WorkExperience[] = [
     {
-      title: 'Junior Software Developer',
+      title: 'work_experience.JST.title',
       company: 'Mc COMP S.A.',
       date: { start: '2023.07' },
-      list: [
-        'Contributed to the development of an Electronic Registration Card Configurator, enhancing efficiency by digitizing paper registration and GDPR consent cards, accessible via Android tablets. Implemented virtual signature capabilities.',
-        'Creation and modification Electronic Registration Card Configurator of cards via a user-friendly Configurator interface.',
-        'Collaborated on the enhancement of a Customer Service System for gas stations, encompassing fleet services, discounts, shopping cart management, notfications and alarm system.',
-        'Contributed to improving interactivity in payment processing from terminals.',
-        'Utilized technologies including Vue.js, Svelte, Vitest, TypeScript, WebSockets, and API-generator to ensure seamless performance.',
-      ],
+      list: [...Array(5)].map(
+        (_, index) => `work_experience.JST.list.point_${index + 1}`
+      ),
     },
     {
-      title: 'Junior Software Tester',
+      title: 'work_experience.JSD.title',
       company: 'Mc COMP S.A.',
       date: { start: '2022.01', end: '2023.06' },
-      list: [
-        'Testing customer service system for gas stations.',
-        'Collaborated on sales system for fleet services, payments and storage system',
-        'Tested interactivity in payment handling.',
-        'Developed skills in software testing methodologies.',
-      ],
+      list: [...Array(5)].map(
+        (_, index) => `work_experience.JSD.list.point_${index + 1}`
+      ),
     },
     {
-      title: 'Assistant Project Manager',
+      title: 'work_experience.APM.title',
       company: 'Roeslein & Associates',
       date: { start: '2021.06', end: '2021.09' },
-      desc: 'I worked in the technology department as an assistant project manager. My responsibilities included:',
-      list: [
-        'designing elements together with their implementation ( i.a. expansion tanks, dies for hydraulic press, tanks)',
-        'assisting in the preparation of production material requirements',
-        'selection of European equivalents of American steel profiles',
-        'quality control of manufactured elements',
-        'support of the Purchasing and Logistics Department',
-        'cooperation in assessing the quantity and technical condition of tools to be sent to the project (communication in English)',
-      ],
+      desc: 'work_experience.APM.desc',
+      list: [...Array(5)].map(
+        (_, index) => `work_experience.APM.list.point_${index + 1}`
+      ),
     },
   ];
 </script>
 
 <div class="wrapper" id="work_experience">
   <SectionTitle
-    title={'Work experience'}
-    description={'Practical skills, responsibilities, and achievements gained in professional roles, showcasing career growth and expertise in a software developer field.'}
+    title={$t('work_experience.section.title')}
+    description={$t('work_experience.section.desc')}
   />
   <div class="desktop">
     <Desktop {workExperience} />

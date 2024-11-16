@@ -1,17 +1,18 @@
 <script lang="ts">
   import ContactButton from './contactButton.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 </script>
 
 <div class="wrapper" id="contact">
   <div class="desc-wrapper">
-    <h2>CONTACT</h2>
-    <p>Let's talk</p>
+    <h2>{$t('contact.title')}</h2>
+    <p>{$t('contact.desc')}</p>
     <!-- <p>Get in touch</p> -->
   </div>
   <div class="contact-wrapper">
     <ContactButton text="email" button_color={1} />
     <ContactButton text="linkedin" button_color={2} />
-    <ContactButton text="resume" button_color={1} />
+    <ContactButton text="cv" button_color={1} />
   </div>
 </div>
 

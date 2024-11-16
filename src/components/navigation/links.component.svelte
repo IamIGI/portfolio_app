@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import LocalLink from './localLink.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   export let isScrolled: boolean;
   export let flexDirection: 'row' | 'column' = 'row';
@@ -16,7 +17,7 @@
   <li>
     <LocalLink
       id="home"
-      name="Home"
+      name={$t('navigation.links.home')}
       {isScrolled}
       on:onClick={handleLinkClicked}
     />
@@ -24,7 +25,7 @@
   <li>
     <LocalLink
       id="work_experience"
-      name="Work"
+      name={$t('navigation.links.work')}
       {isScrolled}
       on:onClick={handleLinkClicked}
     />
@@ -32,7 +33,7 @@
   <li>
     <LocalLink
       id="skills"
-      name="Skills"
+      name={$t('navigation.links.skills')}
       {isScrolled}
       on:onClick={handleLinkClicked}
     />
@@ -40,7 +41,7 @@
   <li>
     <LocalLink
       id="projects"
-      name="Projects"
+      name={$t('navigation.links.projects')}
       {isScrolled}
       on:onClick={handleLinkClicked}
     />
@@ -48,7 +49,7 @@
   <li>
     <LocalLink
       id="contact"
-      name="Contact"
+      name={$t('navigation.links.contacts')}
       {isScrolled}
       on:onClick={handleLinkClicked}
     />

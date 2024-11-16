@@ -1,5 +1,6 @@
 <script lang="ts">
   import gsap from 'gsap';
+  import { _ as t } from 'svelte-i18n';
 
   export let experience: T.WorkExperience;
   export let fromWhere: 'left' | 'right'; //From where animation should begin
@@ -65,17 +66,17 @@
   class="work-description-content"
   bind:this={containerRef}
 >
-  <h2>{experience.title}</h2>
+  <h2>{$t(experience.title)}</h2>
   <h3>{experience.company}</h3>
   {#if experience.desc}
     <p>
-      {experience.desc}
+      {$t(experience.desc)}
     </p>
   {/if}
   <ul>
     {#if experience.list}
       {#each experience.list as item}
-        <li>{item}</li>
+        <li>{$t(item)}</li>
       {/each}
     {/if}
   </ul>
