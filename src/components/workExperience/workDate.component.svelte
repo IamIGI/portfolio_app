@@ -1,12 +1,13 @@
 <script lang="ts">
   import dateUtils from '$lib/utils/date.utils';
+  import { _ as t } from 'svelte-i18n';
 
   export let date: T.WorkDate;
 </script>
 
 <div class="work-time-content">
   <h4>
-    {date.start} - {date.end ?? 'current'}
+    {date.start} - {date.end ?? $t('work_experience.current')}
   </h4>
   <p>
     {dateUtils.timeSpentOnActivity(date.start, date.end)}

@@ -3,6 +3,7 @@
   import Scene from './animation/scene.component.svelte';
   import Tile from './tile.component.svelte';
   import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
+  import { _ as t } from 'svelte-i18n';
 
   let showScene = false;
   let shapesElement: HTMLDivElement | null = null;
@@ -43,10 +44,7 @@
 </script>
 
 <div class="wrapper" id="skills">
-  <SectionTitle
-    title={'Technology Stack.'}
-    description={'Technologies I use to build responsive, full-featured web applications for my personal and commercial projects'}
-  />
+  <SectionTitle title={$t('skills.title')} description={$t('skills.desc')} />
   <div class="inner-wrapper">
     <div class="content">
       {#each skills as skill}

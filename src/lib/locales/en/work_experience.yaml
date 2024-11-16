@@ -1,0 +1,32 @@
+section:
+  title: Work Experience
+  desc: Practical skills, responsibilities, and achievements gained in professional roles, showcasing career growth and expertise in a software developer field.
+JSD:
+  title: 'Junior Software Developer'
+  list:
+    point_1: 'Contributed to the development of an Electronic Registration Card Configurator, enhancing efficiency by digitizing paper registration and GDPR consent cards, accessible via Android tablets. Implemented virtual signature capabilities.'
+    point_2: 'Creation and modification of Electronic Registration Card Configurator of cards via a user-friendly Configurator interface.'
+    point_3: 'Collaborated on the enhancement of a Customer Service System for gas stations, encompassing fleet services, discounts, shopping cart management, notifications, and alarm system.'
+    point_4: 'Contributed to improving interactivity in payment processing from terminals.'
+    point_5: 'Utilized technologies including Vue.js, Svelte, Vitest, TypeScript, WebSockets, and API-generator to ensure seamless performance.'
+
+JST:
+  title: 'Junior Software Tester'
+  list:
+    point_1: 'Testing customer service system for gas stations.'
+    point_2: 'Collaborated on sales system for fleet services, payments, and storage system.'
+    point_3: 'Tested interactivity in payment handling.'
+    point_4: 'Developed skills in software testing methodologies.'
+
+APM:
+  title: 'Assistant Project Manager'
+  desc: 'I worked in the technology department as an assistant project manager. My responsibilities included:'
+  list:
+    point_1: 'Designing elements together with their implementation (i.a. expansion tanks, dies for hydraulic press, tanks).'
+    point_2: 'Assisting in the preparation of production material requirements.'
+    point_3: 'Selection of European equivalents of American steel profiles.'
+    point_4: 'Quality control of manufactured elements.'
+    point_5: 'Support of the Purchasing and Logistics Department.'
+    point_6: 'Cooperation in assessing the quantity and technical condition of tools to be sent to the project (communication in English).'
+
+current: current

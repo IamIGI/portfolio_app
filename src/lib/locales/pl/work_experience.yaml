@@ -1,0 +1,33 @@
+section:
+  title: Doświadczenie zawodowe
+  desc: Praktyczne umiejętności, odpowiedzialności i osiągnięcia zdobyte w zawodach, pokazujące rozwój kariery i wiedzę w dziedzinie programisty oprogramowania.
+
+JSD:
+  title: 'Młodszy programista'
+  list:
+    point_1: 'Współtworzenie Elektronicznego Konfiguratora Kart Rejestracyjnych, poprawiające efektywność poprzez digitalizację papierowych kart rejestracyjnych i zgód RODO, dostępnych na tabletach z systemem Android. Wdrożenie możliwości składania wirtualnych podpisów.'
+    point_2: 'Tworzenie i modyfikacja Elektronicznego Konfiguratora Kart Rejestracyjnych za pomocą przyjaznego interfejsu Konfiguratora.'
+    point_3: 'Współpraca przy ulepszaniu systemu obsługi klienta na stacjach paliw, obejmującego usługi flotowe, rabaty, zarządzanie koszykiem zakupów, system powiadomień i alarmów.'
+    point_4: 'Przyczynianie się do poprawy interaktywności w przetwarzaniu płatności z terminali.'
+    point_5: 'Wykorzystanie technologii takich jak Vue.js, Svelte, Vitest, TypeScript, WebSockets i API-generator w celu zapewnienia płynnego działania.'
+
+JST:
+  title: 'Młodszy tester oprogramowania'
+  list:
+    point_1: 'Testowanie systemu obsługi klienta na stacjach paliw.'
+    point_2: 'Współpraca przy tworzeniu systemu sprzedaży dla usług flotowych, płatności i systemu magazynowego.'
+    point_3: 'Testowanie interaktywności w obsłudze płatności.'
+    point_4: 'Rozwijanie umiejętności w zakresie metodologii testowania oprogramowania.'
+
+APM:
+  title: 'Asystent kierownika projektu'
+  desc: 'Pracowałem w dziale technologicznym jako asystent kierownika projektu. Moje obowiązki obejmowały:'
+  list:
+    point_1: 'Projektowanie elementów wraz z ich wdrażaniem (np. zbiorniki wyrównawcze, matryce do pras hydraulicznych, zbiorniki).'
+    point_2: 'Pomoc w przygotowywaniu wymagań materiałowych do produkcji.'
+    point_3: 'Dobór europejskich odpowiedników amerykańskich profili stalowych.'
+    point_4: 'Kontrola jakości wytwarzanych elementów.'
+    point_5: 'Wsparcie Działu Zakupów i Logistyki.'
+    point_6: 'Współpraca w ocenie ilości i stanu technicznego narzędzi do wysłania na projekt (komunikacja w języku angielskim).'
+
+current: obecnie
