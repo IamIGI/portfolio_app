@@ -87,7 +87,7 @@
       on:onLinkClicked={closeMobileMenu}
     />
     <div class="mobile-icons">
-      <Icons {isScrolled} />
+      <Icons {isScrolled} on:onClick={toggleMenu} />
     </div>
   </div>
 </div>

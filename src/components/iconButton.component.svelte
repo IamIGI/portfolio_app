@@ -15,6 +15,8 @@
   const dispatch = createEventDispatcher<{ onClick: void }>();
 
   function handleClick() {
+    dispatch('onClick');
+
     if (navigateURL !== undefined) {
       if (!/^https?:\/\//i.test(navigateURL)) {
         navigateURL = 'https://' + navigateURL;
@@ -46,8 +48,6 @@
       languagesStore.toggleLang();
       return;
     }
-    // Triggered only when other options are undefined
-    dispatch('onClick');
   }
 </script>
 
@@ -55,7 +55,9 @@
   <img
     {src}
     {alt}
-    class={`${applyColorFilter ? (isScrolled ? 'black-svg-icon' : 'white-svg-icon') : ''}`}
+    class={`${
+      applyColorFilter ? (isScrolled ? 'black-svg-icon' : 'white-svg-icon') : ''
+    }`}
   />
 </button>
 
