@@ -7,15 +7,19 @@
   let isScrolled: boolean = false;
   let isMobileMenuOpen: boolean = false;
   let mobileNav: HTMLDivElement | null = null;
+  let skipOutsideClick = false; // Flag to skip outside click handling
 
   onMount(() => {
     if (window.scrollY > 50) isScrolled = true;
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
+    document.addEventListener('click', handleOutsideClick);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('click', handleOutsideClick);
     };
   });
 
@@ -27,15 +31,22 @@
     }
   }
 
-  function toggleMenu() {
+  function toggleMenu(event: CustomEvent<void> | MouseEvent) {
+    event.stopPropagation(); // Prevent this click from triggering handleOutsideClick
+    skipOutsideClick = true; // Temporarily disable handleOutsideClick for this event
     isMobileMenuOpen = !isMobileMenuOpen;
+
     if (mobileNav) {
       mobileNav.style.display = isMobileMenuOpen ? 'flex' : 'none';
       isScrolled = true;
     }
+
     if (!isMobileMenuOpen && window.scrollY < 50) {
       isScrolled = false;
     }
+
+    // Allow handleOutsideClick to work again after the current event loop
+    setTimeout(() => (skipOutsideClick = false), 0);
   }
 
   function handleResize() {
@@ -52,10 +63,21 @@
     if (mobileNav) mobileNav.style.display = 'none';
   }
 
+  function handleOutsideClick(event: CustomEvent<void> | MouseEvent) {
+    if (skipOutsideClick) return; // Skip execution if the flag is set
+    if (
+      isMobileMenuOpen &&
+      mobileNav &&
+      !mobileNav.contains(event.target as Node)
+    ) {
+      closeMobileMenu();
+    }
+  }
+
   function navigateTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Optional: adds smooth scrolling
+      behavior: 'smooth',
     });
   }
 </script>
