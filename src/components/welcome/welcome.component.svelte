@@ -37,7 +37,7 @@
         ease: 'back.out(3)',
 
         duration: 0.2,
-        delay: 0.5,
+        delay: 0.1,
         stagger: {
           each: 0.1,
           from: 'random',
@@ -171,8 +171,6 @@
           display: inline-block;
           opacity: 0;
           color: var(--color-accent-welcome);
-          font-size: 50px;
-          line-height: 50px;
         }
 
         h1 {
@@ -196,6 +194,7 @@
           font-weight: 400;
 
           span {
+            padding-left: 5px;
             font-size: 40px;
             font-weight: 700;
           }
@@ -254,10 +253,11 @@
 
   @media (max-width: 1000px) {
     .welcome-section {
-      height: 70vh;
+      height: 100vh;
+      min-height: 800px;
 
       .content {
-        gap: 4rem;
+        gap: 2rem;
         flex-direction: column;
 
         .desc {
@@ -277,19 +277,20 @@
     }
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 650px) {
     .welcome-section {
-      height: 800px;
+      min-height: 650px;
 
       .content {
         padding-top: 70px;
-        gap: 4rem;
+        gap: 1rem;
         flex-direction: column;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
 
         .desc {
+          gap: 1rem;
           h1 {
-            $fontSize: 2.5rem;
+            $fontSize: 2rem;
             font-size: $fontSize;
             line-height: $fontSize;
           }
@@ -297,7 +298,7 @@
           h2 {
             font-size: 19px;
             span {
-              font-size: 19px;
+              font-size: 30px;
             }
           }
         }
@@ -310,6 +311,12 @@
           max-height: $size;
         }
       }
+    }
+  }
+
+  @media (max-width: 550px) {
+    .welcome-section {
+      min-height: 600px;
     }
   }
 </style>

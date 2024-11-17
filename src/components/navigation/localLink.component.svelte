@@ -25,7 +25,7 @@
   on:click={() => handleNavigate(id)}
   data-back={name}
   data-front={name}
-></a>
+/>
 
 <style lang="scss">
   $speed: 0.5s;
@@ -103,11 +103,11 @@
       }
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       font-size: 1.2rem;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
       &:before,
       &:after {
         text-align: left;

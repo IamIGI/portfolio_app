@@ -16,14 +16,6 @@
 <ul class:flex-column={flexDirection === 'column'}>
   <li>
     <LocalLink
-      id="home"
-      name={$t('navigation.links.home')}
-      {isScrolled}
-      on:onClick={handleLinkClicked}
-    />
-  </li>
-  <li>
-    <LocalLink
       id="work_experience"
       name={$t('navigation.links.work')}
       {isScrolled}

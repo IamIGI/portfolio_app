@@ -210,7 +210,7 @@
     .wrapper,
     .wrapper-nd2 {
       flex-direction: column-reverse;
-      padding: 5% 8%;
+      padding: 3% 4%;
       gap: 1rem;
     }
 
