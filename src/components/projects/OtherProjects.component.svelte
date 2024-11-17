@@ -12,48 +12,58 @@
     <ul>
       <li>
         <p><span>LinkedinApp</span> (Angular, Typescript, NestJs, Socket.io)</p>
-        <Link
-          link="https://github.com/IamIGI/LinkedinApp"
-          name="Github"
-          {nd2}
-        />
+        <div class="links">
+          <Link
+            link="https://github.com/IamIGI/LinkedinApp"
+            name="Github"
+            {nd2}
+          />
+        </div>
       </li>
       <li>
         <p><span>Countries_App</span> (React, Redux, Typescript)</p>
-        <Link
-          link="https://github.com/IamIGI/REST-Countries-API"
-          name="Github"
-          {nd2}
-        />
-        <Link
-          link="https://iamigi.github.io/REST-Countries-API/"
-          name={$t(`projects.tile.website`)}
-          {nd2}
-        />
+        <div class="links">
+          <Link
+            link="https://github.com/IamIGI/REST-Countries-API"
+            name="Github"
+            {nd2}
+          />
+          <Link
+            link="https://iamigi.github.io/REST-Countries-API/"
+            name={$t(`projects.tile.website`)}
+            {nd2}
+          />
+        </div>
       </li>
       <li>
         <p><span>Interactive Comments Section</span> (React, Redux)</p>
-        <Link
-          link="https://github.com/IamIGI/Interactive-comments-section-FRONTEND"
-          name="Github"
-          {nd2}
-        />
+        <div class="links">
+          <Link
+            link="https://github.com/IamIGI/Interactive-comments-section-FRONTEND"
+            name="Github"
+            {nd2}
+          />
+        </div>
       </li>
       <li>
         <p><span> Multi Step Form</span> (Svelte, SCSS, RWD)</p>
-        <Link
-          link="https://github.com/IamIGI/Multi-step-form"
-          name="Github"
-          {nd2}
-        />
+        <div class="links">
+          <Link
+            link="https://github.com/IamIGI/Multi-step-form"
+            name="Github"
+            {nd2}
+          />
+        </div>
       </li>
       <li>
         <p><span>IP Address Tracker</span> (Svelte, Leaflet-map, Sass)</p>
-        <Link
-          link="https://github.com/IamIGI/ip-address-tracker"
-          name="Github"
-          {nd2}
-        />
+        <div class="links">
+          <Link
+            link="https://github.com/IamIGI/ip-address-tracker"
+            name="Github"
+            {nd2}
+          />
+        </div>
       </li>
     </ul>
 
@@ -91,16 +101,14 @@
 
     p {
       color: $first-font-color;
+      padding-bottom: 7px;
       /* margin-bottom: 10px; */
     }
 
     ul {
-      list-style-type: circle; /* Add circle style */
+      list-style-type: circle;
 
       li {
-        /* margin-bottom: 10px; */
-        /* outline: 1px solid red; */
-        /* height: 60px; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -111,6 +119,11 @@
           span {
             color: $first-font-title-color;
           }
+        }
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
         }
       }
     }
@@ -176,22 +189,46 @@
     }
 
     .image-wrapper {
-      height: 300px;
+      /* height: 300px; */
       width: 450px;
 
       .image-content {
         img {
-          height: 300px;
+          /* height: 300px; */
           width: 450px;
         }
       }
     }
   }
 
+  @media (max-width: 675px) {
+    .wrapper {
+      ul {
+        li {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 0rem;
+          padding-bottom: 5px;
+        }
+      }
+    }
+    .image-wrapper {
+      margin-top: 0rem;
+    }
+  }
+
   @media (max-width: 580px) {
     .wrapper {
       flex-direction: column-reverse;
-      padding: 5% 8%;
+      padding: 3% 4%;
+      h1 {
+        font-size: calc(var(--font-size-h1) - 15px);
+      }
+    }
+
+    .content-wrapper {
+      padding-bottom: 10px;
     }
 
     .image-wrapper {

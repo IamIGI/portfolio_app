@@ -51,13 +51,20 @@
     isMobileMenuOpen = false;
     if (mobileNav) mobileNav.style.display = 'none';
   }
+
+  function navigateTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Optional: adds smooth scrolling
+    });
+  }
 </script>
 
 <div class="wrapper {isScrolled ? 'scrolled' : ''}">
   <nav>
-    <div class="title">
+    <button class="title" on:click={navigateTop}>
       <img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.
-    </div>
+    </button>
     <div class="hamburger-button">
       <IconButton
         src="/svg/media/hamburger.svg"
@@ -124,6 +131,10 @@
       justify-content: center;
       align-items: center;
       gap: 5px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: white;
       img {
         $size: 40px;
         height: $size;
@@ -144,7 +155,7 @@
       padding: 1rem 5rem;
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       padding: 1rem 3rem;
 
       .icons {
@@ -152,7 +163,7 @@
       }
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
       .links-wrapper,
       .icons {
         display: none;
