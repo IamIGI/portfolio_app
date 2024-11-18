@@ -1,9 +1,6 @@
 <script lang="ts">
-  import notificationsUtils from '$lib/utils/notifications.utils';
   import { createEventDispatcher } from 'svelte';
-  import languagesStore, { Lang } from '../stores/languages.store';
-  import { _ as t } from 'svelte-i18n';
-  import { get } from 'svelte/store';
+  import { handleClick } from '$lib/utils/buttonClick.utils';
 
   export let src: string;
   export let alt: string;
@@ -15,52 +12,13 @@
   export let langChange: boolean = false;
 
   const dispatch = createEventDispatcher<{ onClick: void }>();
-
-  function handleClick() {
-    dispatch('onClick');
-
-    if (navigateURL !== undefined) {
-      if (!/^https?:\/\//i.test(navigateURL)) {
-        navigateURL = 'https://' + navigateURL;
-      }
-      window.open(navigateURL, '_blank'); // open in new tab
-      return;
-    }
-    if (download !== undefined) {
-      //Create a html element for download purpose
-      const a = document.createElement('a');
-      a.href = download;
-      a.download = download.split('/').pop() || 'download';
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      notificationsUtils.showInformation(get(t)('notifications.cv'));
-      window.open(download, '_blank');
-      return;
-    }
-    if (textToCopy !== undefined) {
-      navigator.clipboard.writeText(textToCopy);
-      notificationsUtils.showInformation(get(t)('notifications.email_copied'));
-      return;
-    }
-
-    if (langChange) {
-      languagesStore.toggleLang();
-      notificationsUtils.showInformation(
-        get(t)(
-          `notifications.lang.${
-            languagesStore.getLang() === Lang.PL ? 'pl' : 'en'
-          }`
-        )
-      );
-      return;
-    }
-  }
 </script>
 
-<button class="media-icon" on:click={handleClick}>
+<button
+  class="media-icon"
+  on:click={() =>
+    handleClick(dispatch, navigateURL, download, textToCopy, langChange)}
+>
   <img
     {src}
     {alt}

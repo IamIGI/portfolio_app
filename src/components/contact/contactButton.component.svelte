@@ -1,12 +1,25 @@
 <script lang="ts">
+  import { handleClick } from '$lib/utils/buttonClick.utils';
+  import { createEventDispatcher } from 'svelte';
+
   export let text: string;
   export let button_color: 1 | 2;
+  export let navigateURL: string | undefined = undefined;
+  export let download: string | undefined = undefined;
+  export let textToCopy: string | undefined = undefined;
+  export let langChange: boolean = false;
+
+  const dispatch = createEventDispatcher<{ onClick: void }>();
 </script>
 
-<button class="button {button_color === 1 ? 'button_1' : 'button_2'}">
+<button
+  class="button {button_color === 1 ? 'button_1' : 'button_2'}"
+  on:click={() =>
+    handleClick(dispatch, navigateURL, download, textToCopy, langChange)}
+>
   {text}
-  <div class="button__horizontal"></div>
-  <div class="button__vertical"></div>
+  <div class="button__horizontal" />
+  <div class="button__vertical" />
 </button>
 
 <style lang="scss">
