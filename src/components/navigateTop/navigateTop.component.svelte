@@ -49,5 +49,10 @@
       -webkit-transform: scale($scale); /* Safari 3-8 */
       transform: scale($scale);
     }
+
+    @media (max-width: 550px) {
+      bottom: 40px;
+      right: 40px;
+    }
   }
 </style>

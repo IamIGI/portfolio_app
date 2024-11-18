@@ -13,7 +13,12 @@
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
-    if (prefersReducedMotion) {
+
+    // Check if the screen width is smaller than 550px
+    const isSmallScreen = window.matchMedia('(max-width: 550px)').matches;
+
+    // Stop animation if prefers-reduced-motion is true or the screen is small
+    if (prefersReducedMotion || isSmallScreen) {
       gsap.to('.work-description-content', { opacity: 1 });
       return;
     }
@@ -124,6 +129,10 @@
       -ms-transform: scale($scale); /* IE 9 */
       -webkit-transform: scale($scale); /* Safari 3-8 */
       transform: scale($scale);
+    }
+
+    @media (max-width: 550px) {
+      padding: 10px;
     }
   }
 </style>

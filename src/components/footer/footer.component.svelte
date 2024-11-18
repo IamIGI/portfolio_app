@@ -45,6 +45,11 @@
     @media (max-width: 1275px) {
       padding: 30px 0 15px 0;
     }
+
+    @media (max-width: 550px) {
+      padding: 0px 0 0px 0;
+      gap: 0rem;
+    }
   }
 
   .upper-wrapper {
@@ -85,6 +90,11 @@
         display: none;
       }
     }
+    @media (max-width: 550px) {
+      h1 {
+        font-size: calc(var(--font-size-h1) - 30px);
+      }
+    }
   }
 
   .bottom-wrapper {
@@ -99,6 +109,18 @@
       $size: 45px;
       height: $size;
       width: $size;
+    }
+
+    @media (max-width: 550px) {
+      p {
+        font-size: calc(var(--font-size-p) - 3px);
+      }
+
+      img {
+        $size: 35px;
+        height: $size;
+        width: $size;
+      }
     }
   }
 </style>
