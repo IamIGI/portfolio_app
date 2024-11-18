@@ -2,6 +2,7 @@
   import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
   import IconButton from '../iconButton.component.svelte';
   import { _ as t } from 'svelte-i18n';
+  import languageStore, { Lang } from '../../stores/languages.store';
 </script>
 
 <div class="footer-wrapper">
@@ -15,7 +16,13 @@
         alt="li"
         navigateURL={GLOBAL_VARS.linkedin}
       />
-      <IconButton src="/svg/media/document.svg" alt="document" />
+      <IconButton
+        src="/svg/media/document.svg"
+        alt="document"
+        download={`./pdf/Igor_Klusek_CV_${
+          $languageStore === Lang.PL ? 'PL' : 'ENG'
+        }.pdf`}
+      />
       <IconButton
         src="/svg/media/email.svg"
         alt="fb"
