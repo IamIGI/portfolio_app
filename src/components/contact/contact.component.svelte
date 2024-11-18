@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
+  import languageStore, { Lang } from '../../stores/languages.store';
   import ContactButton from './contactButton.component.svelte';
   import { _ as t } from 'svelte-i18n';
 </script>
@@ -10,9 +12,23 @@
     <!-- <p>Get in touch</p> -->
   </div>
   <div class="contact-wrapper">
-    <ContactButton text="email" button_color={1} />
-    <ContactButton text="linkedin" button_color={2} />
-    <ContactButton text="cv" button_color={1} />
+    <ContactButton
+      text="email"
+      button_color={1}
+      textToCopy={GLOBAL_VARS.email}
+    />
+    <ContactButton
+      text="linkedin"
+      button_color={2}
+      navigateURL={GLOBAL_VARS.linkedin}
+    />
+    <ContactButton
+      text="cv"
+      button_color={1}
+      download={`./pdf/Igor_Klusek_CV_${
+        $languageStore === Lang.PL ? 'PL' : 'ENG'
+      }.pdf`}
+    />
   </div>
 </div>
 
