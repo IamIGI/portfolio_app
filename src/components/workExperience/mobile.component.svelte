@@ -40,6 +40,10 @@
     .work-desc-wrapper {
       padding: 0 0 40px 0;
     }
+
+    @media (max-width: 550px) {
+      gap: 1rem;
+    }
   }
 
   .work-line {

@@ -37,7 +37,7 @@
     @media (max-width: 1050px) {
       width: 85%;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 550px) {
       gap: 0.3rem;
     }
   }

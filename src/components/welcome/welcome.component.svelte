@@ -253,7 +253,7 @@
 
   @media (max-width: 1000px) {
     .welcome-section {
-      height: 100vh;
+      height: 900px;
       min-height: 800px;
 
       .content {
@@ -261,8 +261,8 @@
         flex-direction: column;
 
         .desc {
-          justify-content: center;
-          align-items: center;
+          display: block;
+          align-content: center;
           text-align: center;
 
           h1 {
@@ -282,9 +282,9 @@
       min-height: 650px;
 
       .content {
-        padding-top: 70px;
+        padding-top: 60px;
         gap: 1rem;
-        flex-direction: column;
+
         /* justify-content: flex-start; */
 
         .desc {
@@ -317,6 +317,12 @@
   @media (max-width: 550px) {
     .welcome-section {
       min-height: 600px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .welcome-section {
+      height: 100vh;
     }
   }
 </style>

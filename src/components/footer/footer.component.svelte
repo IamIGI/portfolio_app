@@ -2,6 +2,7 @@
   import { GLOBAL_VARS } from '$lib/GLOBAL_VAR';
   import IconButton from '../iconButton.component.svelte';
   import { _ as t } from 'svelte-i18n';
+  import languageStore, { Lang } from '../../stores/languages.store';
 </script>
 
 <div class="footer-wrapper">
@@ -15,7 +16,13 @@
         alt="li"
         navigateURL={GLOBAL_VARS.linkedin}
       />
-      <IconButton src="/svg/media/document.svg" alt="document" />
+      <IconButton
+        src="/svg/media/document.svg"
+        alt="document"
+        download={`./pdf/Igor_Klusek_CV_${
+          $languageStore === Lang.PL ? 'PL' : 'ENG'
+        }.pdf`}
+      />
       <IconButton
         src="/svg/media/email.svg"
         alt="fb"
@@ -44,6 +51,11 @@
 
     @media (max-width: 1275px) {
       padding: 30px 0 15px 0;
+    }
+
+    @media (max-width: 550px) {
+      padding: 0px 0 0px 0;
+      gap: 0rem;
     }
   }
 
@@ -85,6 +97,11 @@
         display: none;
       }
     }
+    @media (max-width: 550px) {
+      h1 {
+        font-size: calc(var(--font-size-h1) - 30px);
+      }
+    }
   }
 
   .bottom-wrapper {
@@ -99,6 +116,18 @@
       $size: 45px;
       height: $size;
       width: $size;
+    }
+
+    @media (max-width: 550px) {
+      p {
+        font-size: calc(var(--font-size-p) - 3px);
+      }
+
+      img {
+        $size: 35px;
+        height: $size;
+        width: $size;
+      }
     }
   }
 </style>

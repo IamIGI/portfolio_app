@@ -63,5 +63,19 @@
       font-weight: 600;
       font-size: 25px;
     }
+
+    @media (max-width: 600px) {
+      p {
+        font-size: 16px;
+      }
+      min-width: 0px;
+    }
+
+    @media (max-width: 450px) {
+      p {
+        font-size: 15px;
+      }
+      min-height: 50px;
+    }
   }
 </style>

@@ -66,15 +66,14 @@
 
     @media (max-width: 450px) {
       padding-right: 0.5rem;
-    }
-    @media (max-width: 400px) {
-      padding: 15px 0;
-      padding-right: 1rem;
       p {
         $fontSize: 55px;
         font-size: $fontSize;
         line-height: $fontSize;
       }
+    }
+    @media (max-width: 400px) {
+      padding: 15px 1rem 0 0;
     }
   }
 

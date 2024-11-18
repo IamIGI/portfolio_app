@@ -25,7 +25,7 @@
 <style lang="scss">
   .modal {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     left: 20px;
     min-width: 180px;
     min-height: 60px;
@@ -35,6 +35,10 @@
     justify-content: center;
     z-index: 9999;
     border-radius: var(--main-border-radius);
+
+    @media (max-width: 600px) {
+      bottom: 30px;
+    }
   }
 
   .header {

@@ -1,7 +1,9 @@
 <script lang="ts">
   import notificationsUtils from '$lib/utils/notifications.utils';
   import { createEventDispatcher } from 'svelte';
-  import languagesStore from '../stores/languages.store';
+  import languagesStore, { Lang } from '../stores/languages.store';
+  import { _ as t } from 'svelte-i18n';
+  import { get } from 'svelte/store';
 
   export let src: string;
   export let alt: string;
@@ -34,18 +36,25 @@
       a.click();
       document.body.removeChild(a);
 
-      notificationsUtils.showInformation('CV downloaded');
+      notificationsUtils.showInformation(get(t)('notifications.cv'));
       window.open(download, '_blank');
       return;
     }
     if (textToCopy !== undefined) {
       navigator.clipboard.writeText(textToCopy);
-      notificationsUtils.showInformation('Email copied');
+      notificationsUtils.showInformation(get(t)('notifications.email_copied'));
       return;
     }
 
     if (langChange) {
       languagesStore.toggleLang();
+      notificationsUtils.showInformation(
+        get(t)(
+          `notifications.lang.${
+            languagesStore.getLang() === Lang.PL ? 'pl' : 'en'
+          }`
+        )
+      );
       return;
     }
   }

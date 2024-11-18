@@ -11,7 +11,13 @@
     <p>{$t(`projects.others.desc`)}</p>
     <ul>
       <li>
-        <p><span>LinkedinApp</span> (Angular, Typescript, NestJs, Socket.io)</p>
+        <p>
+          <a
+            href="https://github.com/IamIGI/LinkedinApp"
+            target="_blank"
+            rel="noopener noreferrer">LinkedinApp</a
+          > (Angular, Typescript, NestJs, Socket.io)
+        </p>
         <div class="links">
           <Link
             link="https://github.com/IamIGI/LinkedinApp"
@@ -21,7 +27,13 @@
         </div>
       </li>
       <li>
-        <p><span>Countries_App</span> (React, Redux, Typescript)</p>
+        <p>
+          <a
+            href="https://iamigi.github.io/REST-Countries-API/"
+            target="_blank"
+            rel="noopener noreferrer">Countries_App</a
+          > (React, Redux, Typescript)
+        </p>
         <div class="links">
           <Link
             link="https://github.com/IamIGI/REST-Countries-API"
@@ -29,14 +41,20 @@
             {nd2}
           />
           <Link
-            link="https://iamigi.github.io/REST-Countries-API/"
+            link="https://iamigi.github.io/REST-Countries-API//"
             name={$t(`projects.tile.website`)}
             {nd2}
           />
         </div>
       </li>
       <li>
-        <p><span>Interactive Comments Section</span> (React, Redux)</p>
+        <p>
+          <a
+            href="https://github.com/IamIGI/Interactive-comments-section-FRONTEND"
+            target="_blank"
+            rel="noopener noreferrer">Interactive Comments Section</a
+          > (React, Redux)
+        </p>
         <div class="links">
           <Link
             link="https://github.com/IamIGI/Interactive-comments-section-FRONTEND"
@@ -46,7 +64,15 @@
         </div>
       </li>
       <li>
-        <p><span> Multi Step Form</span> (Svelte, SCSS, RWD)</p>
+        <p>
+          <a
+            href="https://github.com/IamIGI/Multi-step-form"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Multi Step Form</a
+          > (Svelte, SCSS, RWD)
+        </p>
         <div class="links">
           <Link
             link="https://github.com/IamIGI/Multi-step-form"
@@ -56,7 +82,13 @@
         </div>
       </li>
       <li>
-        <p><span>IP Address Tracker</span> (Svelte, Leaflet-map, Sass)</p>
+        <p>
+          <a
+            href="https://github.com/IamIGI/ip-address-tracker"
+            target="_blank"
+            rel="noopener noreferrer">IP Address Tracker</a
+          > (Svelte, Leaflet-map, Sass)
+        </p>
         <div class="links">
           <Link
             link="https://github.com/IamIGI/ip-address-tracker"
@@ -116,8 +148,9 @@
         p {
           margin-top: 0px;
           /* outline: 1px solid blue; */
-          span {
+          a {
             color: $first-font-title-color;
+            text-decoration: underline;
           }
         }
         .links {
@@ -222,6 +255,13 @@
     .wrapper {
       flex-direction: column-reverse;
       padding: 3% 4%;
+      ul {
+        li {
+          .links {
+            display: none;
+          }
+        }
+      }
       h1 {
         font-size: calc(var(--font-size-h1) - 15px);
       }
