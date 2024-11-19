@@ -6,19 +6,20 @@
 
   const workExperience: T.WorkExperience[] = [
     {
-      title: 'work_experience.JST.title',
+      title: 'work_experience.JSD.title',
       company: 'Mc COMP S.A.',
       date: { start: '2023.07' },
+
       list: [...Array(5)].map(
-        (_, index) => `work_experience.JST.list.point_${index + 1}`
+        (_, index) => `work_experience.JSD.list.point_${index + 1}`
       ),
     },
     {
-      title: 'work_experience.JSD.title',
+      title: 'work_experience.JST.title',
       company: 'Mc COMP S.A.',
       date: { start: '2022.01', end: '2023.06' },
-      list: [...Array(5)].map(
-        (_, index) => `work_experience.JSD.list.point_${index + 1}`
+      list: [...Array(4)].map(
+        (_, index) => `work_experience.JST.list.point_${index + 1}`
       ),
     },
     {
@@ -26,7 +27,7 @@
       company: 'Roeslein & Associates',
       date: { start: '2021.06', end: '2021.09' },
       desc: 'work_experience.APM.desc',
-      list: [...Array(5)].map(
+      list: [...Array(6)].map(
         (_, index) => `work_experience.APM.list.point_${index + 1}`
       ),
     },

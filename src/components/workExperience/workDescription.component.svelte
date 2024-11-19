@@ -1,9 +1,11 @@
 <script lang="ts">
+  import dateUtils from '$lib/utils/date.utils';
   import gsap from 'gsap';
   import { _ as t } from 'svelte-i18n';
 
   export let experience: T.WorkExperience;
   export let fromWhere: 'left' | 'right'; //From where animation should begin
+  console.log(experience);
 
   let observer: IntersectionObserver;
   let containerRef: HTMLDivElement;
@@ -73,18 +75,23 @@
 >
   <h2>{$t(experience.title)}</h2>
   <h3>{experience.company}</h3>
+  <h4>
+    {experience.date.start} - {experience.date.end ??
+      $t('work_experience.current')}
+  </h4>
+
   {#if experience.desc}
     <p>
       {$t(experience.desc)}
     </p>
   {/if}
-  <ul>
-    {#if experience.list}
+  {#if experience.list}
+    <ul>
       {#each experience.list as item}
         <li>{$t(item)}</li>
       {/each}
-    {/if}
-  </ul>
+    </ul>
+  {/if}
 </div>
 
 <style lang="scss">

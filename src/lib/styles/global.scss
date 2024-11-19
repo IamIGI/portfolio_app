@@ -86,7 +86,7 @@ li {
     font-weight: 500;
   }
   h4 {
-    font-size: var(--font-size-h4);
+    font-size: calc(var(--font-size-h4) - 3px);
     font-weight: 500;
   }
   h5 {
