@@ -3,6 +3,8 @@
   import { _ as t } from 'svelte-i18n';
 
   export let date: T.WorkDate;
+
+  let timeSpent = dateUtils.timeSpentOnActivity(date.start, date.end);
 </script>
 
 <div class="work-time-content">
@@ -10,7 +12,28 @@
     {date.start} - {date.end ?? $t('work_experience.current')}
   </h4>
   <p>
-    {dateUtils.timeSpentOnActivity(date.start, date.end)}
+    {#if timeSpent.years > 0}
+      {timeSpent.years}
+      {$t(
+        `${
+          timeSpent.years === 1
+            ? 'work_experience.year_1'
+            : timeSpent.years > 1 && timeSpent.years <= 4
+            ? 'work_experience.year_2_4'
+            : 'work_experience.year_4'
+        }`
+      )}
+    {/if}
+    {timeSpent.months}
+    {$t(
+      `${
+        timeSpent.months === 1
+          ? 'work_experience.month_1'
+          : timeSpent.months > 1 && timeSpent.months <= 4
+          ? 'work_experience.month_2_4'
+          : 'work_experience.month_5_12'
+      }`
+    )}
   </p>
 </div>
 
