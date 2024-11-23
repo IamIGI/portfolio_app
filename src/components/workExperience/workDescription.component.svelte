@@ -1,11 +1,9 @@
 <script lang="ts">
-  import dateUtils from '$lib/utils/date.utils';
   import gsap from 'gsap';
   import { _ as t } from 'svelte-i18n';
 
   export let experience: T.WorkExperience;
   export let fromWhere: 'left' | 'right'; //From where animation should begin
-  console.log(experience);
 
   let observer: IntersectionObserver;
   let containerRef: HTMLDivElement;
