@@ -1,3 +1,4 @@
+export const ssr = false;
 import en from '$lib/locales/en';
 import pl from '$lib/locales/pl';
 import { addMessages, init, locale } from 'svelte-i18n';
