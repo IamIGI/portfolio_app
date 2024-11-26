@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import gsap from 'gsap';
   import { _ as t } from 'svelte-i18n';
+  import { base } from '$app/paths';
 
   let nameLetters = 'igor'.split('');
   let surnameLetters = 'kłusek'.split('');
@@ -76,12 +77,25 @@
       }
     );
   });
+
+  function preventContextMenu(event: MouseEvent) {
+    event.preventDefault(); // Disable right-click and context menu
+  }
 </script>
 
 <div class="welcome-section" id="home">
   <!-- Background Video -->
-  <video class="background-video" autoplay muted loop>
-    <source src={`/videos/${videoName}`} type="video/mp4" />
+  <video
+    class="background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    disablePictureInPicture
+    controls={false}
+    on:contextmenu={preventContextMenu}
+  >
+    <source src={`${base}/videos/${videoName}`} type="video/mp4" />
     Ups. Your browser does not support the video tag.
   </video>
 
@@ -108,7 +122,7 @@
       </h2>
     </div>
     <div class="welcome-image">
-      <img src="/images/welcome/me_2.png" alt="me" />
+      <img src={`${base}/images/welcome/me_2.png`} alt="me" />
     </div>
   </div>
 </div>
@@ -121,6 +135,7 @@
 
     // Video Background Styling
     .background-video {
+      max-width: 100%;
       position: absolute;
       top: 0;
       left: 0;
@@ -132,6 +147,15 @@
       // Add a filter to make the video darker
       /* filter: brightness(1) contrast(1.2); // Adjust values to your preference */
       filter: brightness(1); // Adjust values to your preference
+
+      /* Optional: Hide fullscreen button on iOS and mobile browsers */
+      &::-webkit-media-controls-fullscreen-button {
+        display: none;
+      }
+
+      @media (max-width: 550px) {
+        filter: brightness(0.9);
+      }
     }
 
     // Content of the section

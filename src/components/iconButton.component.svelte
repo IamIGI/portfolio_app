@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { handleClick } from '$lib/utils/buttonClick.utils';
+  import { base } from '$app/paths';
 
   export let src: string;
   export let alt: string;
@@ -20,7 +21,7 @@
     handleClick(dispatch, navigateURL, download, textToCopy, langChange)}
 >
   <img
-    {src}
+    src={`${base}${src}`}
     {alt}
     class={`${
       applyColorFilter ? (isScrolled ? 'black-svg-icon' : 'white-svg-icon') : ''

@@ -4,6 +4,7 @@
   import Tile from './tile.component.svelte';
   import SectionTitle from '../sectionDescription/sectionTitle.component.svelte';
   import { _ as t } from 'svelte-i18n';
+  import { base } from '$app/paths';
 
   let showScene = false;
   let shapesElement: HTMLDivElement | null = null;
@@ -51,7 +52,7 @@
         <Tile>
           <img
             class="skill-icon"
-            src={`/svg/skills/${skill.iconName}.svg`}
+            src={`${base}/svg/skills/${skill.iconName}.svg`}
             alt="typescript"
           />
           <p>{skill.title}</p>

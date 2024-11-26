@@ -21,11 +21,12 @@
 <style lang="scss">
   .wrapper {
     position: relative;
-    width: 100%;
+    width: 100%; /* Avoid potential horizontal overflow */
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow-x: hidden; /* Prevent any horizontal scrolling within the wrapper */
   }
 </style>

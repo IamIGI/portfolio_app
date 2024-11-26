@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import WorkDescription from './workDescription.component.svelte';
 
   export let workExperience: T.WorkExperience[];
@@ -10,7 +11,7 @@
       <div class="work-line">
         <div class="work-line-relative">
           <div class="dot">
-            <img src="/svg/work-experience/dot-fill.svg" alt="dot" />
+            <img src={`${base}/svg/work-experience/dot-fill.svg`} alt="dot" />
           </div>
         </div>
       </div>
