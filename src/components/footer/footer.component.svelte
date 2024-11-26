@@ -3,6 +3,7 @@
   import IconButton from '../iconButton.component.svelte';
   import { _ as t } from 'svelte-i18n';
   import languageStore, { Lang } from '../../stores/languages.store';
+  import { base } from '$app/paths';
 </script>
 
 <div class="footer-wrapper">
@@ -24,7 +25,7 @@
         }.pdf`}
       />
       <IconButton
-        src="/svg/media/email.svg"
+        src={`/svg/media/email.svg`}
         alt="fb"
         textToCopy={GLOBAL_VARS.email}
       />
@@ -32,8 +33,8 @@
   </div>
   <div class="bottom-wrapper">
     <p>© 2024 Igor. Own design</p>
-    <img src="/svg/footer/salsa.svg" alt="salsa" />
-    <img src="/svg/footer/flamenco.svg" alt="flamenco" />
+    <img src={`${base}/svg/footer/salsa.svg`} alt="salsa" />
+    <img src={`${base}/svg/footer/flamenco.svg`} alt="flamenco" />
   </div>
 </div>
 

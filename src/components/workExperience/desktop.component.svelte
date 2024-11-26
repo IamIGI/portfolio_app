@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import WorkDate from './workDate.component.svelte';
   import WorkDescription from './workDescription.component.svelte';
 
@@ -15,7 +16,7 @@
         <div class="work-line">
           <div class="work-line-relative">
             <div class="dot">
-              <img src="/svg/work-experience/dot-fill.svg" alt="dot" />
+              <img src={`${base}/svg/work-experience/dot-fill.svg`} alt="dot" />
             </div>
           </div>
         </div>
@@ -30,7 +31,7 @@
         <div class="work-line">
           <div class="work-line-relative">
             <div class="dot">
-              <img src="/svg/work-experience/dot-fill.svg" alt="dot" />
+              <img src={`${base}/svg/work-experience/dot-fill.svg`} alt="dot" />
             </div>
           </div>
         </div>
@@ -112,28 +113,6 @@
         height: 30px;
         filter: var(--color-filter-accent);
       }
-    }
-  }
-
-  @keyframes -global-from-left {
-    0% {
-      transform: translateX(-100vw);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes -global-from-right {
-    0% {
-      transform: translateX(100vw);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
     }
   }
 </style>

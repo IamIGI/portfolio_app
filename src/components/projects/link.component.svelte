@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from '$app/paths';
+
   export let link: string;
   export let name: string;
   export let nd2: boolean;
@@ -15,7 +17,7 @@
   <img
     class="icon"
     class:icon-nd2={nd2}
-    src="/svg/projects/enter.svg"
+    src={`${base}/svg/projects/enter.svg`}
     alt="link"
   />
 </a>

@@ -45,7 +45,7 @@
       techStack: ['Svelte', 'TypeScript', 'SCSS', 'translateplus.io'],
       github: 'https://github.com/IamIGI/Translator_app',
       projectBoard: 'https://github.com/users/IamIGI/projects/12',
-      websiteLink: 'https://translator-app-six-chi.vercel.app',
+      websiteLink: 'https://igorklusek.com/translator/',
       imgUrl: '/images/projects/translatorApp.JPG',
     },
     //-----Countries----------

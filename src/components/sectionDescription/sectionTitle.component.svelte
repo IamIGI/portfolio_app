@@ -6,7 +6,7 @@
 
 <div class="title-wrapper">
   <h1>{title}</h1>
-  <!-- <img src={imgUrl} alt="dot" /> -->
+  <!-- <img src={`${base}${imgUrl}`} alt="dot" /> -->
   <h3>
     {description}
   </h3>

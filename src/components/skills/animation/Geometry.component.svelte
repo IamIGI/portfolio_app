@@ -5,6 +5,7 @@
   import gsap from 'gsap';
   import { elasticOut } from 'svelte/easing';
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
 
   //x,y,z
   export let position: [number, number, number] = [0, 0, 0];
@@ -15,9 +16,9 @@
   let reducedMotionRate = 0;
 
   const soundEffects = [
-    new Audio('/sounds/hit1.ogg'),
-    new Audio('/sounds/hit2.ogg'),
-    new Audio('/sounds/hit3.ogg'),
+    new Audio(`${base}/sounds/hit1.ogg`),
+    new Audio(`${base}/sounds/hit2.ogg`),
+    new Audio(`${base}/sounds/hit3.ogg`),
   ];
 
   const materialParams = [

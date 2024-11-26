@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import Link from './link.component.svelte';
   import { _ as t } from 'svelte-i18n';
 
@@ -41,7 +42,7 @@
   </div>
   <div class="image-wrapper">
     <div class="image-content" class:image-content-2nd={nd2}>
-      <img src={imgUrl} alt="project" />
+      <img src={`${base}${imgUrl}`} alt="project" />
     </div>
   </div>
 </div>

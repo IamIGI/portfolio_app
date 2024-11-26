@@ -3,6 +3,7 @@
   import IconButton from '../iconButton.component.svelte';
   import Links from './links.component.svelte';
   import Icons from './icons.component.svelte';
+  import { base } from '$app/paths';
 
   let isScrolled: boolean = false;
   let isMobileMenuOpen: boolean = false;
@@ -85,7 +86,7 @@
 <div class="wrapper {isScrolled ? 'scrolled' : ''}">
   <nav>
     <button class="title" on:click={navigateTop}>
-      <img src="/svg/footer/salsa.svg" alt="salsa" /> IGOR.
+      <img src={`${base}/svg/footer/salsa.svg`} alt="salsa" /> IGOR.
     </button>
     <div class="hamburger-button">
       <IconButton
@@ -162,6 +163,16 @@
         height: $size;
         width: $size;
       }
+
+      @media (max-width: 550px) {
+        font-size: 2rem;
+
+        img {
+          $size: 30px;
+          height: $size;
+          width: $size;
+        }
+      }
     }
 
     .icons {
@@ -193,6 +204,10 @@
       .hamburger-button {
         display: flex;
       }
+    }
+
+    @media (max-width: 550px) {
+      padding: 0.5rem 1rem;
     }
   }
 

@@ -1,10 +1,13 @@
 node_modules
 
+
 # Output
 .output
 .vercel
 /.svelte-kit
 /build
+/public
+/deploy
 
 # OS
 .DS_Store

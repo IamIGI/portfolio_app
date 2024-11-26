@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from '$app/paths';
+
   function navigateTop() {
     window.scrollTo({
       top: 0,
@@ -9,7 +11,7 @@
 
 <button on:click={navigateTop}>
   <img
-    src="/svg/navigationTop/arrow-up.svg"
+    src={`${base}/svg/navigationTop/arrow-up.svg`}
     alt="arrowUp"
     class={`white-svg-icon`}
   />
