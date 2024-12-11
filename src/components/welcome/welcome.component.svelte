@@ -115,9 +115,7 @@
         </h1>
       </div>
       <h2>
-        {$t('welcome.desc_1')}<span class="job-animation"
-          >{$t('welcome.job_title')}</span
-        >
+        <span class="job-animation">{$t('welcome.job_title')}</span>
         {$t('welcome.desc_2')}
       </h2>
     </div>
